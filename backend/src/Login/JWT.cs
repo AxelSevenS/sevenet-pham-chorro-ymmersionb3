@@ -10,15 +10,15 @@ public record JWT {
     public static readonly string Secret = "Nawmn47obf1NiJD/+/BNDKD55iOY8ct695aa8J1smZgADdLurcGnSoWhbEjejG0tWvgtGCyJpyebTwI6EA1u8A==";
 
 
-    public string Header { get; set; }
-    public string Payload { get; set; }
-    public string Signature { get; set; }
+    public string header { get; set; }
+    public string payload { get; set; }
+    public string signature { get; set; }
 
 
     public JWT(string header, string payload, string signature) {
-        Header = header;
-        Payload = payload;
-        Signature = signature;
+        this.header = header;
+        this.payload = payload;
+        this.signature = signature;
     }
 
 
@@ -48,9 +48,9 @@ public record JWT {
     }
 
 
-    public JWTHeader GetDecodedHeader() => JsonSerializer.Deserialize<JWTHeader>(Base64UrlDecode(Header)) ?? throw new Exception("Invalid JWT header");
-    public JWTPayload GetDecodedPayload() => JsonSerializer.Deserialize<JWTPayload>(Base64UrlDecode(Payload)) ?? throw new Exception("Invalid JWT payload");
-    public string GetDecodedSignature() => Base64UrlDecode(Signature);
+    public JWTHeader GetDecodedHeader() => JsonSerializer.Deserialize<JWTHeader>(Base64UrlDecode(header)) ?? throw new Exception("Invalid JWT header");
+    public JWTPayload GetDecodedPayload() => JsonSerializer.Deserialize<JWTPayload>(Base64UrlDecode(payload)) ?? throw new Exception("Invalid JWT payload");
+    public string GetDecodedSignature() => Base64UrlDecode(signature);
 
     public static JWT? Parse(string jwt) {
         string[] parts = jwt.Split('.');
@@ -62,11 +62,11 @@ public record JWT {
     }
 
     public bool Verify() {
-        if (GetDecodedPayload().Exp < DateTimeOffset.UtcNow.ToUnixTimeSeconds()) {
+        if (GetDecodedPayload().exp < DateTimeOffset.UtcNow.ToUnixTimeSeconds()) {
             return false;
         }
 
-        return GenerateSignature() == Signature;
+        return GenerateSignature() == signature;
     }
 
     public static JWT Generate(User user) {
@@ -74,10 +74,11 @@ public record JWT {
         uint exp = (uint)DateTimeOffset.UtcNow.AddDays(7).ToUnixTimeSeconds();
         string header = Base64UrlEncode(JsonSerializer.Serialize(new JWTHeader()));
         string payload = Base64UrlEncode(JsonSerializer.Serialize(new JWTPayload() {
-            Id = user.Id,
-            Email = user.Email,
-            Iat = iat,
-            Exp = exp,
+            id = user.id,
+            email = user.email,
+            password = user.password,
+            iat = iat,
+            exp = exp,
         }));
         string signature = Base64UrlEncode( GenerateSignature(header, payload) );
 
@@ -92,26 +93,27 @@ public record JWT {
     }
 
     public string GenerateSignature() {
-        return GenerateSignature(Header, Payload);
+        return GenerateSignature(header, payload);
     }
 
     public override string ToString()
     {
-        return Header + "." + Payload + "." + Signature;
+        return header + "." + payload + "." + signature;
     }
 
 
 
     public record class JWTHeader {
-        public string Alg { get; set; } = "HS256";
-        public string Typ { get; set; } = "JWT";
+        public string alg { get; set; } = "HS256";
+        public string typ { get; set; } = "JWT";
     }
 
     public record class JWTPayload {
-        public uint Id { get; set; } = 1;
-        public string? Email { get; set; } = "";
-        public uint Iat { get; set; } = 0;
-        public uint Exp { get; set; } = 0;
+        public uint id { get; set; } = 1;
+        public string? email { get; set; } = null;
+        public string? password { get; set; } = null;
+        public uint iat { get; set; } = 0;
+        public uint exp { get; set; } = 0;
     }
 
     

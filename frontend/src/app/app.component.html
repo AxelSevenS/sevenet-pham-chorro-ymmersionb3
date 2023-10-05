@@ -16,10 +16,18 @@
 		<div class="spacer"></div>
 		<button class="home" [routerLink]="['/']">
 			<span>Accueil</span>
-			<fa-icon [icon]="home" class=""
+			<fa-icon [icon]="homeIcon" class=""></fa-icon>
 		</button>
 		<button class="connection" [routerLink]="['login']">
-			<span>Connexion</span>
+			<span>
+				<ng-template [ngIf]="currentUser" [ngIfElse]="loggedOut">
+					Bonjour, {{ currentUser.email }}
+				</ng-template>
+				<ng-template #loggedOut>
+					Connexion
+				</ng-template>
+			</span>
+
 			<fa-icon [icon]="userIcon" class="user-icon"></fa-icon>
 		</button>
 		
@@ -33,7 +41,7 @@
 	</div>
 
 
-	<cart *ngIf="displayCart"></cart>
+	<cart *ngIf="displayCart"/>
 
 
 	<div class="content" role="main">

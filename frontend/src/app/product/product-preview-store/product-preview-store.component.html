@@ -23,18 +23,22 @@
     <br>
 
     <span>
-        <span *ngIf="product.stock != 0">
-            <span>Stock: </span>
-            <span
-                [ngClass]="{'product-preview-stock-orange': product.stock > 0 && product.stock < 10,
+        <ng-template [ngIf]="product.stock != 0" [ngIfElse]="noStock">
+            <span>
+                <span>Stock: </span>
+                <span
+                    [ngClass]="{'product-preview-stock-orange': product.stock > 0 && product.stock < 10,
                         'product-preview-stock-green': product.stock >= 10
                     }"
-            >
+                >
                     {{ product.stock }}
+                </span>
             </span>
-        </span>
-        <span *ngIf="product.stock == 0" class="product-preview-stock-red">
-            Rupture de Stock
-        </span>
+        </ng-template>
+        <ng-template #noStock>
+            <span class="product-preview-stock-red">
+                Rupture de Stock
+            </span>
+        </ng-template>
     </span>
 </div>

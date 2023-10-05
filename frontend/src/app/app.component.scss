@@ -183,6 +183,7 @@ a {
 	align-items: center;
 	background-color: orange;
 	font-weight: 600;
+	padding: 0 2rem;
 	
 	& * {
 		color: white;
@@ -320,24 +321,24 @@ svg#clouds {
 	}
 }
 
-.connection{
-	border: none;
-	margin:0rem ;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+// .connection{
+// 	border: none;
+// 	margin:0rem ;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
 	 
-	&:hover{
-		.user-icon{
+// 	&:hover{
+// 		.user-icon{
 			
-		}
+// 		}
 		
-	}
-	span {
-		margin-right:0.5rem;
-		&:hover{
+// 	}
+// 	span {
+// 		margin-right:0.5rem;
+// 		&:hover{
 			
-			cursor: pointer;
-		}
-	}
-}
+// 			cursor: pointer;
+// 		}
+// 	}
+// }

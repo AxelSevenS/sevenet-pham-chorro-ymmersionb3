@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/login/login-service/login.service';
 import { FormControl } from '@angular/forms';
 import { User } from 'src/app/login/user-model/user.model';
 import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
 	selector: 'login',
@@ -13,6 +14,8 @@ export class LoginComponent {
 
 	email = new FormControl('');
 	password = new FormControl('');
+
+	get currentUser() { return LoginService.currentUser; }
 
 	constructor(private loginService: LoginService, private router: Router) { }
 
@@ -33,6 +36,15 @@ export class LoginComponent {
 		}
 
 		localStorage.setItem('jwt', JSON.stringify(loginResult));
+		LoginService.updateCurrentUser();
+		console.log(LoginService.currentUser);
+		this.router.navigate(['/']);
+	}
+	
+	logout = () => {
+		localStorage.removeItem('jwt');
+		LoginService.updateCurrentUser();
+		console.log(LoginService.currentUser);
 		this.router.navigate(['/']);
 	}
 }

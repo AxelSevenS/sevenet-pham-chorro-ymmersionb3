@@ -1,10 +1,11 @@
-<!-- <div *ngIf="cartItems"> -->
-    <span *ngIf="cartItems?.length === 0">
+<ng-template [ngIf]="cartItems && cartItems.length === 0" [ngIfElse]="haveItemsInCart">
+    <span>
         Votre panier est vide
     </span>
-    <product-preview-cart *ngFor="let cartItem of cartItems; let i = index" [cartItem]="cartItem" [removeItemCallback]="removeItem" [updateQuantityCallback]="updateQuantity">
-    </product-preview-cart>
-    <span *ngIf="cartItems?.length !== 0">
+</ng-template>
+<ng-template #haveItemsInCart>
+    <product-preview-cart *ngFor="let cartItem of cartItems; let i = index" [cartItem]="cartItem" [removeItemCallback]="removeItem" [updateQuantityCallback]="updateQuantity"/>
+    <span>
         TOTAL : {{ totalPrice }} €
     </span>
-<!-- </div> -->
+</ng-template>

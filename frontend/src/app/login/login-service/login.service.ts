@@ -7,9 +7,11 @@ import { User } from '../user-model/user.model';
 })
 export class LoginService {
 
+	public static currentUser: User | null = null;
+
 	constructor() { }
 
-	async tryLogin(email: string, password: string): Promise<string | Error> {
+	tryLogin = async (email: string, password: string): Promise<string | Error> => {
 		
 		return new Promise<string | Error>(resolve => {
 			let body = new FormData();
@@ -18,8 +20,7 @@ export class LoginService {
 
 			fetch( environment.domainUrl + 'api/users/login', {
 				method: 'POST',
-				body: body,
-				redirect: 'follow'
+				body: body
 			} )
 				.then(response => response.json())
 				.then(data => {
@@ -34,7 +35,7 @@ export class LoginService {
 		
 	};
 
-	async tryRegister(email: string, password: string): Promise<User | Error> {
+	tryRegister = async (email: string, password: string): Promise<User | Error> => {
 		return new Promise<User | Error>(resolve => {
 			var body = new FormData();
 			body.append('email', email);
@@ -53,5 +54,29 @@ export class LoginService {
 				});
 		});
 		
+	}
+
+	public static updateCurrentUser = () => {
+		let currentUser: User | Error = LoginService.getCurrentUser();
+		if ( !(currentUser instanceof Error) ) {
+			LoginService.currentUser = currentUser;
+		}
+	}
+	
+	public static getCurrentUser = (): User | Error => {
+		const jwtString = localStorage.getItem('jwt');
+		if (jwtString === null || jwtString === undefined) {
+			return new Error('No JWT found');
+		}
+		const jwt = JSON.parse(jwtString);
+
+		const payload = JSON.parse(atob(jwt.payload));
+		let user = {
+			id: payload.id,
+			email: payload.email,
+			password: payload.password,
+		};
+		
+		return user;
 	}
 }

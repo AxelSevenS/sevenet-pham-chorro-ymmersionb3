@@ -66,8 +66,8 @@ public class UserController : Controller<UserRepository, User>
     public async Task<ActionResult<User>> RegisterUser([FromForm]string email, [FromForm]string password)
     {
         User? result = await repository.PostUser( new User() {
-            Email = email, 
-            Password = password
+            email = email, 
+            password = password
 
         });
         if (result is null) {
