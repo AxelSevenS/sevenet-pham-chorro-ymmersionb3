@@ -1,0 +1,16 @@
+<form id="form-login" method="post">
+        <label for="email" name="email">Adresse Email</label>
+        <input type="email" name="register-email" id="register-email" placeholder="Adresse Email" required [formControl]="email">
+        <label for="password" name="password">Mot de Passe</label>
+        <input type="password" name="register-password" id="register-password" placeholder="Mot de Passe" required [formControl]="password">
+
+        <button (click)="submit()" class="login-button" type="submit" name="submit-connection">Se Connecter</button>
+        <span>
+                <span>
+                        Vous n'êtes pas encore inscrit?
+                </span>
+                <span>
+                        <a class="register-link" [routerLink]="['/register']">Inscrivez-vous</a>
+                </span>
+        </span>
+</form>

@@ -1,0 +1,11 @@
+.login-button{
+    margin: 1rem;
+    padding:1rem;
+    width: 185px;
+    height: 50px;
+    border-radius: 20px;
+    &:hover{
+        background-color: white;
+        color: orange;
+    }
+}

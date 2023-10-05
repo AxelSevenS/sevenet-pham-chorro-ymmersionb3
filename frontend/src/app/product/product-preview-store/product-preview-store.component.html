@@ -1,0 +1,40 @@
+
+<div class="product-preview-store" *ngIf="product">
+    <a [routerLink]="['/products/']" [queryParams]="{id: product.id}">
+        <div class="product-preview-image-container">
+            <img *ngIf="product.images && product.images[0] as image" src="{{ urlBase + image }}" class="product-preview-image" alt="">
+        </div>
+        
+        <span class="product-preview-name">
+            {{ product.name }}
+        </span>
+        <br>
+        <span class="product-preview-price">
+            <span>{{ product.price }}</span><span>€</span>
+        </span>
+    </a>
+    
+    <br>
+
+    <button (click)="addToCart()">
+        <fa-icon [icon]="cartIcon"></fa-icon>
+    </button>
+
+    <br>
+
+    <span>
+        <span *ngIf="product.stock != 0">
+            <span>Stock: </span>
+            <span
+                [ngClass]="{'product-preview-stock-orange': product.stock > 0 && product.stock < 10,
+                        'product-preview-stock-green': product.stock >= 10
+                    }"
+            >
+                    {{ product.stock }}
+            </span>
+        </span>
+        <span *ngIf="product.stock == 0" class="product-preview-stock-red">
+            Rupture de Stock
+        </span>
+    </span>
+</div>

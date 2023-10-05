@@ -1,0 +1,10 @@
+<!-- <div *ngIf="cartItems"> -->
+    <span *ngIf="cartItems?.length === 0">
+        Votre panier est vide
+    </span>
+    <product-preview-cart *ngFor="let cartItem of cartItems; let i = index" [cartItem]="cartItem" [removeItemCallback]="removeItem" [updateQuantityCallback]="updateQuantity">
+    </product-preview-cart>
+    <span *ngIf="cartItems?.length !== 0">
+        TOTAL : {{ totalPrice }} €
+    </span>
+<!-- </div> -->

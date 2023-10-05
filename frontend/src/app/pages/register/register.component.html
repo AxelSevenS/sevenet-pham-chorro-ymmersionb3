@@ -1,0 +1,8 @@
+<form id="form-register" method="post">
+    <label for="email" name="email">Adresse Email</label>
+    <input type="email" name="register-email" id="register-email" placeholder="Adresse Email" [formControl]="email">
+    <label for="password" name="password">Mot de Passe</label>
+    <input type="password" name="register-password" id="register-password" placeholder="Mot de Passe" [formControl]="password">
+    
+    <button class="register" type="submit" (click)="submit()">S'inscrire</button>
+</form>

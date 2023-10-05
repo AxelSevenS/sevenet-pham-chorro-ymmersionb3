@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+:host {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    right: 0;
+    width: $sidebar-width;
+    height: calc(100vh - $toolbar-height);
+    height: fit-content;
+    overflow-y: scroll;
+    top: $toolbar-height;
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 15px 0 0 15px;
+
+    padding: 10px;
+
+    
+}

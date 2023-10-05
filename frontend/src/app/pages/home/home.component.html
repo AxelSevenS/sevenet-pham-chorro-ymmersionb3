@@ -1,0 +1,52 @@
+<!DOCTYPE html>​
+
+<html lang="fr">​
+
+    <head>​
+
+        <meta charset="UTF-8" />​
+        <title>Titre</title>
+        
+    </head>​
+
+    <body>​
+        <span class="searchbar-container">
+            <input type="text" matInput placeholder="Recherche..." [(ngModel)]="searchText">
+            <button class="searchbar-button" id="searchbar-button" type="submit">Rechercher</button>
+        </span>
+        <span class="sorting-container">
+            
+            <select class="input-sorting-select" name="sort-by" id="sorting" [(ngModel)]="sortingMethod">
+                <option value="default" selected disabled hidden>Aucun Tri</option>
+                <option value="nameAsc">Nom (A-Z)</option>
+                <option value="nameDesc">Nom (Z-A)</option>
+                <option value="priceAsc">Prix (Croissant)</option>
+                <option value="priceDesc">Prix (Décroissant)</option>
+                <option value="stockAsc">Stock (Croissant)</option>
+                <option value="stockDesc">Stock (Décroissant)</option>
+            </select>
+            
+            <span>
+                <input type="checkbox" class="input-sorting-checkbox" name="in-stock" [(ngModel)]="cullOutOfStock">
+                <label for="in-stock">En stock</label>
+            </span>
+
+            <span>
+                <input type="checkbox" class="input-sorting-checkbox" name="min-price" [(ngModel)]="minPrice">
+                <label for="min-price">Prix Minimum</label>
+                <input type="number" *ngIf="minPrice" [(ngModel)]="minPrice">
+            </span>
+            <span>
+                <input type="checkbox" class="input-sorting-checkbox" name="max-price" [(ngModel)]="maxPrice">
+                <label for="max-price">Prix Maximum</label>
+                <input type="number" *ngIf="maxPrice" [(ngModel)]="maxPrice">
+            </span>
+
+        </span>
+        <ol>
+            <product-preview-store *ngFor="let product of products | productTextFilter: searchText | stockFilter: cullOutOfStock | sortBy: sortingMethod | clampPrice: minPrice: maxPrice; let i = index" [product]="product"></product-preview-store>
+        </ol>
+
+    </body>​
+
+</html>​

@@ -1,0 +1,42 @@
+<!-- Toolbar -->
+<head>
+</head>
+
+<body>
+	
+	<div class="toolbar" role="banner">
+		<div class="logo">
+
+			<span class="title">Amasone</span>
+			<img src="../assets/img/Amasone.png" alt="logo">
+
+
+		</div>
+		
+		<div class="spacer"></div>
+		<button class="home" [routerLink]="['/']">
+			<span>Accueil</span>
+			<fa-icon [icon]="home" class=""
+		</button>
+		<button class="connection" [routerLink]="['login']">
+			<span>Connexion</span>
+			<fa-icon [icon]="userIcon" class="user-icon"></fa-icon>
+		</button>
+		
+		<button class="cart-button" (click)="toggleCart()" id="cart-toggle">
+			<span>Mon Panier</span>
+			<fa-icon [icon]="cartIcon"></fa-icon>
+			<div *ngIf="totalCount>0"> 
+				<span id="cercle">{{ totalCount }}</span>
+			</div>
+		</button>
+	</div>
+
+
+	<cart *ngIf="displayCart"></cart>
+
+
+	<div class="content" role="main">
+		<router-outlet></router-outlet>
+	</div>
+</body>

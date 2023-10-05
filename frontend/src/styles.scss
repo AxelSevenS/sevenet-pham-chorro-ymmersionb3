@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "./app/app.component.scss";
+
+
+.slick {
+    &-prev, &-next {
+        &:before {
+            color: black !important;
+        }
+    }
+}
+
+
+button {
+    padding: 1rem 2rem;
+    margin: 0rem 1.5rem 0rem 0rem;
+    height: 60px;
+    //width: 50px;
+    border:none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    background-color: orange;
+
+
+    &:hover {
+        background-color: #ff8c00;
+        box-sizing: border-box;
+        border-radius: 0;
+        border: 0.5px solid #ff8c00;
+        cursor: pointer;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 17rem;
+    min-width: 15rem;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    gap: 1rem; 
+    
+    &:hover {
+        box-shadow: 0 0 10px #ff8c00;
+        border: 1px solid #ff8c00;
+    }
+}
+
+select {
+    border-radius: 4px;
+    background-color: white;
+    height: 4vh;
+    width: 100%;
+    // margin-left: 1rem;
+    box-shadow: 10px 0 0 0 white, -10px 0 0 0 white;
+}
+    
+label {
+    font-size: 1rem;
+    font-weight: 6000px;
+    color: black;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    //font-family: 'Times New Roman', Times, serif;
+}
+
+input {
+    width: 10rem;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem;
+    
+    &[type="text"] {
+        width: 100%;
+    }
+
+    &[type="checkbox"] {
+        border-radius: 20px;
+        height: 3vh;
+        width: 3vh;
+        // margin-left: 1rem;
+        margin: 0;
+        outline-color: orange;
+    }
+
+}

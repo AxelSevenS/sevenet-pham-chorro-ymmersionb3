@@ -1,0 +1,23 @@
+.Error-Message {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding:5px;
+    &:hover {
+        background-color:black;
+        color: white;
+        border-radius: 15px;
+    }
+}

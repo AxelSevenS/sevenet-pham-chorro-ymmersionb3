@@ -1,0 +1,71 @@
+
+:host {
+    overflow: hidden;
+    max-height: 25rem;
+    height: 100%;
+    border-radius: 0.5rem;
+    border-color: black;
+    padding: 5px;
+
+
+    & img {
+        // width: 8rem;
+        min-width: 8rem;
+        height: 8rem;
+        max-width: 100%;
+        object-fit: cover;
+    }
+    
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    & .product-preview {
+        display: flex;
+        justify-content: baseline;
+        color: black;
+        margin: 10rem;
+        
+        &-name{
+            font-size: 1rem;
+        }
+        
+        
+        &-description {
+            font-style: italic;
+            
+        }
+
+        &-price {
+            font-size: 1.5rem;
+            margin: 1px;
+        }
+        
+        &-stock {
+            display: flex;
+            align-items: baseline;
+
+            &-green {
+                color: green;
+            }
+            &-orange {
+                color: orange;
+            }
+            &-red {
+                color: red;
+            }
+        }
+        &-store {
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.25s ease-in-out;
+            
+            &:hover {
+                box-shadow: 2px 2px 5px 5px orange, -0.5px -0.5px 1px 1px orange;
+            }
+        }
+    }
+    
+}

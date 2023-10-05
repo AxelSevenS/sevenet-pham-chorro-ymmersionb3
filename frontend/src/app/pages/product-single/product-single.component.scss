@@ -1,0 +1,65 @@
+.slick {
+    &-slide {
+        height: 15rem;
+        width: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.product-single {
+    display: flex;
+    flex-direction: row;
+
+    &-image {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+    
+    &-text {
+        display: flex;
+        margin-left: 10rem;
+        flex-direction: column;
+    }
+    
+    &-name {
+        display: flex;
+        font-size: 2rem;
+        justify-content: center;
+    }
+
+    &-price{
+        display: flex;
+        font-size: 1.5rem;
+    }
+    
+    &-description{
+        margin-top: 1rem;
+    }
+    
+    &-image-carousel {
+        display: flex;
+        height: 20rem;
+        width: 30rem;
+        padding: 0 2rem;
+        border-color: black;
+        
+    }
+    &-stock {
+        margin-top: 1rem;
+
+        &-green {
+            color: green;
+        }
+        &-orange {
+            color: orange;
+        }
+        &-red {
+            color: red;
+        }
+    }
+    
+}
