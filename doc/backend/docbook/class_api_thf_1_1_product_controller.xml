@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_api_thf_1_1_product_controller" xml:lang="en-US">
+<title>ApiThf.ProductController Class Reference</title>
+<indexterm><primary>ApiThf.ProductController</primary></indexterm>
+<para>Inheritance diagram for ApiThf.ProductController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_api_thf_1_1_product_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_product_controller_1a16b73b3e40ff77396763b18c091022f6">ProductController</link> (<link linkend="_class_api_thf_1_1_product_repository">ProductRepository</link> <link linkend="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414">repository</link>)</para>
+</listitem>
+            <listitem><para>ActionResult&lt; uint &gt; <link linkend="_class_api_thf_1_1_product_controller_1a1a44c8ad2aec934e71db635f18519b16">GetNewId</link> ()</para>
+
+<para>Get a new id for a new product. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; List&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; &gt; <link linkend="_class_api_thf_1_1_product_controller_1ab6d94035885185add85aff4083156157">GetAll</link> ()</para>
+
+<para>Get all products. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; <link linkend="_class_api_thf_1_1_product_controller_1af46c7e384b4b3b26df33b49cba15cf7b">GetById</link> (uint id)</para>
+
+<para>Get a product by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; <link linkend="_class_api_thf_1_1_product_controller_1ad6d0d5abac3ce8a228c1dc7583becaa8">Post</link> ([FromForm] <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>)</para>
+
+<para>Get a product by name. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult &gt; <link linkend="_class_api_thf_1_1_product_controller_1afc5fea3a5759614abc3bce9a49b9f60e">PostImages</link> (uint id)</para>
+
+<para>Add images to a product. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; <link linkend="_class_api_thf_1_1_product_controller_1a32e0f31cfe871d1fa3610fc9bab015bd">Put</link> (uint id, [FromForm] <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> product)</para>
+
+<para>Update a product. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult &gt; <link linkend="_class_api_thf_1_1_product_controller_1af16090b87cfd56a76648cf17220f1e16">Delete</link> (uint id)</para>
+
+<para>Delete a product. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; ProductRepository, Product &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_controller_1a2896408b580b104f6c2a8b1080538905">Controller</link> (T repository)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; ProductRepository, Product &gt;</link>        <itemizedlist>
+            <listitem><para>static bool <link linkend="_class_api_thf_1_1_controller_1ab19c0c03010e5e7271fb37d1023c563d">IsAuthValid</link> (HttpRequest request, out JWT? token)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; ProductRepository, Product &gt;</link>        <itemizedlist>
+            <listitem><para>readonly T <link linkend="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414">repository</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1a16b73b3e40ff77396763b18c091022f6"/><section>
+    <title>ProductController()</title>
+<indexterm><primary>ProductController</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>ProductController</secondary></indexterm>
+<para><computeroutput>ApiThf.ProductController.ProductController (<link linkend="_class_api_thf_1_1_product_repository">ProductRepository</link> repository)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1af16090b87cfd56a76648cf17220f1e16"/><section>
+    <title>Delete()</title>
+<indexterm><primary>Delete</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>Delete</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult &gt; ApiThf.ProductController.Delete (uint id)</computeroutput></para><para>
+
+<para>Delete a product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+&lt;response code=&quot;200&quot;&gt;The product was deleted&lt;/response&gt; &lt;response code=&quot;404&quot;&gt;The product was not found&lt;/response&gt; &lt;response code=&quot;400&quot;&gt;The id was 0&lt;/response&gt; </para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1ab6d94035885185add85aff4083156157"/><section>
+    <title>GetAll()</title>
+<indexterm><primary>GetAll</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>GetAll</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; List&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; &gt; ApiThf.ProductController.GetAll ( )</computeroutput></para><para>
+
+<para>Get all products. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>All products </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1af46c7e384b4b3b26df33b49cba15cf7b"/><section>
+    <title>GetById()</title>
+<indexterm><primary>GetById</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>GetById</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; ApiThf.ProductController.GetById (uint id)</computeroutput></para><para>
+
+<para>Get a product by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The product with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1a1a44c8ad2aec934e71db635f18519b16"/><section>
+    <title>GetNewId()</title>
+<indexterm><primary>GetNewId</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>GetNewId</secondary></indexterm>
+<para><computeroutput>ActionResult&lt; uint &gt; ApiThf.ProductController.GetNewId ( )</computeroutput></para><para>
+
+<para>Get a new id for a new product. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A new id for a new product </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1ad6d0d5abac3ce8a228c1dc7583becaa8"/><section>
+    <title>Post()</title>
+<indexterm><primary>Post</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>Post</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; ApiThf.ProductController.Post ([FromForm] <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> Product)</computeroutput></para><para>
+
+<para>Get a product by name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Product</entry><entry>
+<para>The Product to add to the database</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The added Product </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1afc5fea3a5759614abc3bce9a49b9f60e"/><section>
+    <title>PostImages()</title>
+<indexterm><primary>PostImages</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>PostImages</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult &gt; ApiThf.ProductController.PostImages (uint id)</computeroutput></para><para>
+
+<para>Add images to a product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_controller_1a32e0f31cfe871d1fa3610fc9bab015bd"/><section>
+    <title>Put()</title>
+<indexterm><primary>Put</primary><secondary>ApiThf.ProductController</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductController</primary><secondary>Put</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; ApiThf.ProductController.Put (uint id, [FromForm] <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> product)</computeroutput></para><para>
+
+<para>Update a product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                            <row>
+<entry>product</entry><entry>
+<para>The product to update</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The updated product </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Product/<link linkend="__product_controller_8cs">ProductController.cs</link></section>
+</section>

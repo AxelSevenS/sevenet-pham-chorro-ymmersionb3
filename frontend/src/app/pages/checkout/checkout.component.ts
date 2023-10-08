@@ -62,7 +62,6 @@ export class CheckoutComponent {
 				return;
 			}
 			const newStock = product.stock - cartItem.quantity;
-			console.log(`Setting stock of product ${product.id} to ${newStock}`);
 			this.productService.setStock(product.id, newStock);
 		}
 		this.cartService.clearCart();

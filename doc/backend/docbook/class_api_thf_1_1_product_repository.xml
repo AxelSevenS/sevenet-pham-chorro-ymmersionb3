@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_api_thf_1_1_product_repository" xml:lang="en-US">
+<title>ApiThf.ProductRepository Class Reference</title>
+<indexterm><primary>ApiThf.ProductRepository</primary></indexterm>
+<para>Inheritance diagram for ApiThf.ProductRepository:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_api_thf_1_1_product_repository.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_product_repository_1aec7a44e0e411597421e8ce92f238deb8">ProductRepository</link> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_api_thf_1_1_product_repository_1a900aa6ac86653973c85835bac9f260d3">SaveChanges</link> ()</para>
+
+<para>Save the data to the file. </para>
+</listitem>
+            <listitem><para>uint <link linkend="_class_api_thf_1_1_product_repository_1abf71137dcca4d3938784b98feb4fee79">GetNewId</link> ()</para>
+
+<para>Get a new id for a product. </para>
+</listitem>
+            <listitem><para>async Task&lt; List&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; <link linkend="_class_api_thf_1_1_product_repository_1ac18c66c71a37f557bf7513387caa28d1">GetProducts</link> ()</para>
+
+<para>Get all products. </para>
+</listitem>
+            <listitem><para>async Task&lt; HttpResponseMessage &gt; <link linkend="_class_api_thf_1_1_product_repository_1a7e0f5d8677fff11bcb3462a22693c661">AddImage</link> (uint id, IFormFile image)</para>
+
+<para>Get a product by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; <link linkend="_class_api_thf_1_1_product_repository_1a6702b1f1e59067bf544dde88b1264681">GetProductById</link> (uint id)</para>
+
+<para>Get a product by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; <link linkend="_class_api_thf_1_1_product_repository_1af8d3cc70975b57d00ac7597d297f3bd4">PostProductAsync</link> (<link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> product)</para>
+
+<para>Post a product. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; <link linkend="_class_api_thf_1_1_product_repository_1a6e29f8598c9187facfb2eb7169e3042c">UpdateProduct</link> (uint id, <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> product)</para>
+
+<para>Update a product. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; <link linkend="_class_api_thf_1_1_product_repository_1a9b08529dfef2d6350fbf00c92bba0d66">DeleteProduct</link> (uint id)</para>
+
+<para>Delete a product. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_api_thf_1_1_repository">ApiThf.Repository&lt; Product &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_repository_1ab9f1d413dee10fd5042efc9ff098b9b4">Repository</link> (string fileName)</para>
+</listitem>
+            <listitem><para>abstract void <link linkend="_class_api_thf_1_1_repository_1aa941638268140326e4100d344d4e8099">SaveChanges</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static readonly string <link linkend="_class_api_thf_1_1_product_repository_1a8600a4473d90bcdd77486e6f3f71e801">fileName</link> = &quot;data.json&quot;</para>
+</listitem>
+            <listitem><para>static readonly string[] <link linkend="_class_api_thf_1_1_product_repository_1a960fc21da0f2a92714bbb2146f043c6b">acceptedImageTypes</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Protected Attributes inherited from <link linkend="_class_api_thf_1_1_repository">ApiThf.Repository&lt; Product &gt;</link>        <itemizedlist>
+            <listitem><para>readonly List&lt; T &gt; <link linkend="_class_api_thf_1_1_repository_1a7aef5006a3cb8022a861c4c60fe33ac4">Data</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1aec7a44e0e411597421e8ce92f238deb8"/><section>
+    <title>ProductRepository()</title>
+<indexterm><primary>ProductRepository</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>ProductRepository</secondary></indexterm>
+<para><computeroutput>ApiThf.ProductRepository.ProductRepository ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a7e0f5d8677fff11bcb3462a22693c661"/><section>
+    <title>AddImage()</title>
+<indexterm><primary>AddImage</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>AddImage</secondary></indexterm>
+<para><computeroutput>async Task&lt; HttpResponseMessage &gt; ApiThf.ProductRepository.AddImage (uint id, IFormFile image)</computeroutput></para><para>
+
+<para>Get a product by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                            <row>
+<entry>image</entry><entry>
+<para>The image to add</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The product with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a9b08529dfef2d6350fbf00c92bba0d66"/><section>
+    <title>DeleteProduct()</title>
+<indexterm><primary>DeleteProduct</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>DeleteProduct</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; ApiThf.ProductRepository.DeleteProduct (uint id)</computeroutput></para><para>
+
+<para>Delete a product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The deleted product </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1abf71137dcca4d3938784b98feb4fee79"/><section>
+    <title>GetNewId()</title>
+<indexterm><primary>GetNewId</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>GetNewId</secondary></indexterm>
+<para><computeroutput>uint ApiThf.ProductRepository.GetNewId ( )</computeroutput></para><para>
+
+<para>Get a new id for a product. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A new id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a6702b1f1e59067bf544dde88b1264681"/><section>
+    <title>GetProductById()</title>
+<indexterm><primary>GetProductById</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>GetProductById</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; ApiThf.ProductRepository.GetProductById (uint id)</computeroutput></para><para>
+
+<para>Get a product by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The product with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1ac18c66c71a37f557bf7513387caa28d1"/><section>
+    <title>GetProducts()</title>
+<indexterm><primary>GetProducts</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>GetProducts</secondary></indexterm>
+<para><computeroutput>async Task&lt; List&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> &gt; &gt; ApiThf.ProductRepository.GetProducts ( )</computeroutput></para><para>
+
+<para>Get all products. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>All products </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1af8d3cc70975b57d00ac7597d297f3bd4"/><section>
+    <title>PostProductAsync()</title>
+<indexterm><primary>PostProductAsync</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>PostProductAsync</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; ApiThf.ProductRepository.PostProductAsync (<link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> product)</computeroutput></para><para>
+
+<para>Post a product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>product</entry><entry>
+<para>The product to add to the database</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The added product </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a900aa6ac86653973c85835bac9f260d3"/><section>
+    <title>SaveChanges()</title>
+<indexterm><primary>SaveChanges</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>SaveChanges</secondary></indexterm>
+<para><computeroutput>override void ApiThf.ProductRepository.SaveChanges ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save the data to the file. </para>
+</para>
+<para>
+Implements <link linkend="_class_api_thf_1_1_repository_1aa941638268140326e4100d344d4e8099">ApiThf.Repository&lt; Product &gt;</link>.</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a6e29f8598c9187facfb2eb7169e3042c"/><section>
+    <title>UpdateProduct()</title>
+<indexterm><primary>UpdateProduct</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>UpdateProduct</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link>?&gt; ApiThf.ProductRepository.UpdateProduct (uint id, <link linkend="_namespace_api_thf_1a220ed634674594b1d5f7f1598b76e7e6">Product</link> product)</computeroutput></para><para>
+
+<para>Update a product. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the product</para>
+</entry>
+                            </row>
+                            <row>
+<entry>product</entry><entry>
+<para>The product to update</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The updated product </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a960fc21da0f2a92714bbb2146f043c6b"/><section>
+    <title>acceptedImageTypes</title>
+<indexterm><primary>acceptedImageTypes</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>acceptedImageTypes</secondary></indexterm>
+<para><computeroutput>readonly string [] ApiThf.ProductRepository.acceptedImageTypes<computeroutput>[static]</computeroutput></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;<emphasis role="keyword">new</emphasis>[]
+&#32;&#32;&#32;&#32;{&#32;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;image/jpeg&quot;</emphasis>,&#32;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="stringliteral">&quot;image/png&quot;</emphasis>
+&#32;&#32;&#32;&#32;}
+</programlisting></section>
+<anchor xml:id="_class_api_thf_1_1_product_repository_1a8600a4473d90bcdd77486e6f3f71e801"/><section>
+    <title>fileName</title>
+<indexterm><primary>fileName</primary><secondary>ApiThf.ProductRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.ProductRepository</primary><secondary>fileName</secondary></indexterm>
+<para><computeroutput>readonly string ApiThf.ProductRepository.fileName = &quot;data.json&quot;<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Product/<link linkend="__product_repository_8cs">ProductRepository.cs</link></section>
+</section>

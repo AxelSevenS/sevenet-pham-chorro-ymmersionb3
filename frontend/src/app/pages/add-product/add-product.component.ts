@@ -23,7 +23,7 @@ export class AddProductComponent {
 	constructor(
 		private productService: ProductService, 
 		private router: Router
-	) { }
+	) {}
 
 
 	public submitProduct = async () => {
@@ -35,7 +35,7 @@ export class AddProductComponent {
 			stock: this.stock,
 			images: [] // this will be ignored in favor of the files passed to the service
 		};
-
+		
 		this.productService.addProduct(product, this.files)
 			.subscribe(result => {
 				this.router.navigate(['/products', result.id]);

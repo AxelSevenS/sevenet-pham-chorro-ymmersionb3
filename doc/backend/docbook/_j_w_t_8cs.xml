@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__j_w_t_8cs" xml:lang="en-US">
+<title>Login/JWT.cs File Reference</title>
+<indexterm><primary>Login/JWT.cs</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_api_thf">ApiThf</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>record <link linkend="_namespace_api_thf_1ab2f5cf98fef22d0c9728c6a3b234591d">ApiThf.JWT</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

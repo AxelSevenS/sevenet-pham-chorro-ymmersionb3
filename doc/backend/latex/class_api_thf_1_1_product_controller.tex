@@ -1,0 +1,178 @@
+\hypertarget{class_api_thf_1_1_product_controller}{}\doxysection{Api\+Thf.\+Product\+Controller Class Reference}
+\label{class_api_thf_1_1_product_controller}\index{ApiThf.ProductController@{ApiThf.ProductController}}
+Inheritance diagram for Api\+Thf.\+Product\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_thf_1_1_product_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_thf_1_1_product_controller_a16b73b3e40ff77396763b18c091022f6}{Product\+Controller}} (\mbox{\hyperlink{class_api_thf_1_1_product_repository}{Product\+Repository}} \mbox{\hyperlink{class_api_thf_1_1_controller_a1d1c07d497c2bd3311845bd2e92e1414}{repository}})
+\item 
+Action\+Result$<$ uint $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_a1a44c8ad2aec934e71db635f18519b16}{Get\+New\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get a new id for a new product. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ List$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_ab6d94035885185add85aff4083156157}{Get\+All}} ()
+\begin{DoxyCompactList}\small\item\em Get all products. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_af46c7e384b4b3b26df33b49cba15cf7b}{Get\+By\+Id}} (uint id)
+\begin{DoxyCompactList}\small\item\em Get a product by id. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_ad6d0d5abac3ce8a228c1dc7583becaa8}{Post}} (\mbox{[}From\+Form\mbox{]} \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}})
+\begin{DoxyCompactList}\small\item\em Get a product by name. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_afc5fea3a5759614abc3bce9a49b9f60e}{Post\+Images}} (uint id)
+\begin{DoxyCompactList}\small\item\em Add images to a product. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_a32e0f31cfe871d1fa3610fc9bab015bd}{Put}} (uint id, \mbox{[}From\+Form\mbox{]} \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} product)
+\begin{DoxyCompactList}\small\item\em Update a product. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_api_thf_1_1_product_controller_af16090b87cfd56a76648cf17220f1e16}{Delete}} (uint id)
+\begin{DoxyCompactList}\small\item\em Delete a product. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_api_thf_1_1_controller}{Api\+Thf.\+Controller$<$ Product\+Repository, Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_thf_1_1_controller_a2896408b580b104f6c2a8b1080538905}{Controller}} (T repository)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_api_thf_1_1_controller}{Api\+Thf.\+Controller$<$ Product\+Repository, Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_api_thf_1_1_controller_ab19c0c03010e5e7271fb37d1023c563d}{Is\+Auth\+Valid}} (Http\+Request request, out JWT? token)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_api_thf_1_1_controller}{Api\+Thf.\+Controller$<$ Product\+Repository, Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+readonly T \mbox{\hyperlink{class_api_thf_1_1_controller_a1d1c07d497c2bd3311845bd2e92e1414}{repository}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_a16b73b3e40ff77396763b18c091022f6}\label{class_api_thf_1_1_product_controller_a16b73b3e40ff77396763b18c091022f6}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!ProductController@{ProductController}}
+\index{ProductController@{ProductController}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{ProductController()}{ProductController()}}
+{\footnotesize\ttfamily Api\+Thf.\+Product\+Controller.\+Product\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_api_thf_1_1_product_repository}{Product\+Repository}}}]{repository }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_af16090b87cfd56a76648cf17220f1e16}\label{class_api_thf_1_1_product_controller_af16090b87cfd56a76648cf17220f1e16}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!Delete@{Delete}}
+\index{Delete@{Delete}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Api\+Thf.\+Product\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Delete a product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the product\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+$<$response code=\char`\"{}200\char`\"{}$>$The product was deleted$<$/response$>$ $<$response code=\char`\"{}404\char`\"{}$>$The product was not found$<$/response$>$ $<$response code=\char`\"{}400\char`\"{}$>$The id was 0$<$/response$>$ \mbox{\Hypertarget{class_api_thf_1_1_product_controller_ab6d94035885185add85aff4083156157}\label{class_api_thf_1_1_product_controller_ab6d94035885185add85aff4083156157}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ List$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ $>$ Api\+Thf.\+Product\+Controller.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all products. 
+
+\begin{DoxyReturn}{Returns}
+All products 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_af46c7e384b4b3b26df33b49cba15cf7b}\label{class_api_thf_1_1_product_controller_af46c7e384b4b3b26df33b49cba15cf7b}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!GetById@{GetById}}
+\index{GetById@{GetById}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{GetById()}{GetById()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ Api\+Thf.\+Product\+Controller.\+Get\+By\+Id (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a product by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the product\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The product with the given id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_a1a44c8ad2aec934e71db635f18519b16}\label{class_api_thf_1_1_product_controller_a1a44c8ad2aec934e71db635f18519b16}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!GetNewId@{GetNewId}}
+\index{GetNewId@{GetNewId}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{GetNewId()}{GetNewId()}}
+{\footnotesize\ttfamily Action\+Result$<$ uint $>$ Api\+Thf.\+Product\+Controller.\+Get\+New\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a new id for a new product. 
+
+\begin{DoxyReturn}{Returns}
+A new id for a new product 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_ad6d0d5abac3ce8a228c1dc7583becaa8}\label{class_api_thf_1_1_product_controller_ad6d0d5abac3ce8a228c1dc7583becaa8}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!Post@{Post}}
+\index{Post@{Post}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{Post()}{Post()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ Api\+Thf.\+Product\+Controller.\+Post (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Form\mbox{]} \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}}}]{Product }\end{DoxyParamCaption})}
+
+
+
+Get a product by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Product} & The Product to add to the database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The added Product 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_afc5fea3a5759614abc3bce9a49b9f60e}\label{class_api_thf_1_1_product_controller_afc5fea3a5759614abc3bce9a49b9f60e}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!PostImages@{PostImages}}
+\index{PostImages@{PostImages}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{PostImages()}{PostImages()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Api\+Thf.\+Product\+Controller.\+Post\+Images (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Add images to a product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the product\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_product_controller_a32e0f31cfe871d1fa3610fc9bab015bd}\label{class_api_thf_1_1_product_controller_a32e0f31cfe871d1fa3610fc9bab015bd}} 
+\index{ApiThf.ProductController@{ApiThf.ProductController}!Put@{Put}}
+\index{Put@{Put}!ApiThf.ProductController@{ApiThf.ProductController}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}} $>$ $>$ Api\+Thf.\+Product\+Controller.\+Put (\begin{DoxyParamCaption}\item[{uint}]{id,  }\item[{\mbox{[}\+From\+Form\mbox{]} \mbox{\hyperlink{namespace_api_thf_a220ed634674594b1d5f7f1598b76e7e6}{Product}}}]{product }\end{DoxyParamCaption})}
+
+
+
+Update a product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the product\\
+\hline
+{\em product} & The product to update\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated product 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Product/\mbox{\hyperlink{_product_controller_8cs}{Product\+Controller.\+cs}}\end{DoxyCompactItemize}

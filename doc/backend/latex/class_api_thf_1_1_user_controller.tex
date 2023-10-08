@@ -1,0 +1,167 @@
+\hypertarget{class_api_thf_1_1_user_controller}{}\doxysection{Api\+Thf.\+User\+Controller Class Reference}
+\label{class_api_thf_1_1_user_controller}\index{ApiThf.UserController@{ApiThf.UserController}}
+Inheritance diagram for Api\+Thf.\+User\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_thf_1_1_user_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_thf_1_1_user_controller_a1de8394ecebf17ddf5bb616c9d37fd4d}{User\+Controller}} (\mbox{\hyperlink{class_api_thf_1_1_user_repository}{User\+Repository}} \mbox{\hyperlink{class_api_thf_1_1_controller_a1d1c07d497c2bd3311845bd2e92e1414}{repository}})
+\item 
+async Task$<$ Action\+Result$<$ List$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_user_controller_a7080af41661daaa8ed65a7acf8e90c8f}{Get\+All}} ()
+\begin{DoxyCompactList}\small\item\em Get all users. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_user_controller_a411a3a1a3b803469b4225ec7915637dd}{Get\+By\+Id}} (uint id)
+\begin{DoxyCompactList}\small\item\em Get a user by id. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_api_thf_1_1_user_controller_a50ef0d67555489070d9c9623e2141c14}{Authenticate\+User}} (\mbox{[}From\+Form\mbox{]}string email, \mbox{[}From\+Form\mbox{]}string password)
+\begin{DoxyCompactList}\small\item\em Authenticate a user. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_user_controller_a70f5c0b6fb35f83f002c20eedb210404}{Register\+User}} (\mbox{[}From\+Form\mbox{]}string email, \mbox{[}From\+Form\mbox{]}string password)
+\begin{DoxyCompactList}\small\item\em Register a user. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_user_controller_a48d9140427b4f41ec2764c1336803e22}{Update\+User}} (uint id, \mbox{[}From\+Form\mbox{]} \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} user)
+\begin{DoxyCompactList}\small\item\em Update a user. \end{DoxyCompactList}\item 
+async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_user_controller_a81eb0c2600b637aec9b18480a69224b8}{Delete\+User}} (uint id)
+\begin{DoxyCompactList}\small\item\em Delete a user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_api_thf_1_1_controller}{Api\+Thf.\+Controller$<$ User\+Repository, User $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_thf_1_1_controller_a2896408b580b104f6c2a8b1080538905}{Controller}} (T repository)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_api_thf_1_1_controller}{Api\+Thf.\+Controller$<$ User\+Repository, User $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_api_thf_1_1_controller_ab19c0c03010e5e7271fb37d1023c563d}{Is\+Auth\+Valid}} (Http\+Request request, out JWT? token)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_api_thf_1_1_controller}{Api\+Thf.\+Controller$<$ User\+Repository, User $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+readonly T \mbox{\hyperlink{class_api_thf_1_1_controller_a1d1c07d497c2bd3311845bd2e92e1414}{repository}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a1de8394ecebf17ddf5bb616c9d37fd4d}\label{class_api_thf_1_1_user_controller_a1de8394ecebf17ddf5bb616c9d37fd4d}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!UserController@{UserController}}
+\index{UserController@{UserController}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{UserController()}{UserController()}}
+{\footnotesize\ttfamily Api\+Thf.\+User\+Controller.\+User\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_api_thf_1_1_user_repository}{User\+Repository}}}]{repository }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a50ef0d67555489070d9c9623e2141c14}\label{class_api_thf_1_1_user_controller_a50ef0d67555489070d9c9623e2141c14}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!AuthenticateUser@{AuthenticateUser}}
+\index{AuthenticateUser@{AuthenticateUser}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{AuthenticateUser()}{AuthenticateUser()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result $>$ Api\+Thf.\+User\+Controller.\+Authenticate\+User (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Form\mbox{]} string}]{email,  }\item[{\mbox{[}\+From\+Form\mbox{]} string}]{password }\end{DoxyParamCaption})}
+
+
+
+Authenticate a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & The email of the user\\
+\hline
+{\em password} & The password of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The JWT token of the user, or Not\+Found if the user does not exist, or Bad\+Request if the email/password is incorrect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a81eb0c2600b637aec9b18480a69224b8}\label{class_api_thf_1_1_user_controller_a81eb0c2600b637aec9b18480a69224b8}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!DeleteUser@{DeleteUser}}
+\index{DeleteUser@{DeleteUser}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{DeleteUser()}{DeleteUser()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ Api\+Thf.\+User\+Controller.\+Delete\+User (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Delete a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The deleted user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a7080af41661daaa8ed65a7acf8e90c8f}\label{class_api_thf_1_1_user_controller_a7080af41661daaa8ed65a7acf8e90c8f}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ List$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ $>$ Api\+Thf.\+User\+Controller.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all users. 
+
+\begin{DoxyReturn}{Returns}
+All users 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a411a3a1a3b803469b4225ec7915637dd}\label{class_api_thf_1_1_user_controller_a411a3a1a3b803469b4225ec7915637dd}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!GetById@{GetById}}
+\index{GetById@{GetById}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{GetById()}{GetById()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ Api\+Thf.\+User\+Controller.\+Get\+By\+Id (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a user by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user with the given id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a70f5c0b6fb35f83f002c20eedb210404}\label{class_api_thf_1_1_user_controller_a70f5c0b6fb35f83f002c20eedb210404}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!RegisterUser@{RegisterUser}}
+\index{RegisterUser@{RegisterUser}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{RegisterUser()}{RegisterUser()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ Api\+Thf.\+User\+Controller.\+Register\+User (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Form\mbox{]} string}]{email,  }\item[{\mbox{[}\+From\+Form\mbox{]} string}]{password }\end{DoxyParamCaption})}
+
+
+
+Register a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & The email of the user\\
+\hline
+{\em password} & The password of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user, or Bad\+Request if the user already exists 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_controller_a48d9140427b4f41ec2764c1336803e22}\label{class_api_thf_1_1_user_controller_a48d9140427b4f41ec2764c1336803e22}} 
+\index{ApiThf.UserController@{ApiThf.UserController}!UpdateUser@{UpdateUser}}
+\index{UpdateUser@{UpdateUser}!ApiThf.UserController@{ApiThf.UserController}}
+\doxysubsubsection{\texorpdfstring{UpdateUser()}{UpdateUser()}}
+{\footnotesize\ttfamily async Task$<$ Action\+Result$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ Api\+Thf.\+User\+Controller.\+Update\+User (\begin{DoxyParamCaption}\item[{uint}]{id,  }\item[{\mbox{[}\+From\+Form\mbox{]} \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Update a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+{\em user} & The user to update\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated user 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Login/\+User/\mbox{\hyperlink{_user_controller_8cs}{User\+Controller.\+cs}}\end{DoxyCompactItemize}

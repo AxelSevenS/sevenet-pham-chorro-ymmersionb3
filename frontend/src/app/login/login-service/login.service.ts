@@ -39,13 +39,18 @@ export class LoginService {
 	}
 	
 	public static getCurrentUser(): User | null {
-		const jwtString = localStorage.getItem('jwt');
+		const jwtString = this.getJWT();
 		if (jwtString === null || jwtString === undefined) {
 			return null;
 		}
-		const jwt = JSON.parse(jwtString);
 
-		const payload = JSON.parse(atob(jwt.payload));
+		// split the jwt string into 3 parts: header, payload, and signature
+		const jwt = jwtString.split('.');
+		if (jwt.length !== 3) {
+			return null;
+		}
+
+		const payload = JSON.parse(atob(jwt[1]));
 		let user = {
 			id: payload.id,
 			email: payload.email,
@@ -55,12 +60,16 @@ export class LoginService {
 		return user;
 	}
 
-	public setJWT(jwt: string) {
+	public static setJWT(jwt: string) {
 		localStorage.setItem('jwt', JSON.stringify(jwt));
 		LoginService.refreshUser();
 	}
 
-	public resetJWT() {
+	public static getJWT(): string | null {
+		return localStorage.getItem('jwt');
+	}
+
+	public static resetJWT() {
 		localStorage.removeItem('jwt');
 		LoginService.refreshUser();
 	}

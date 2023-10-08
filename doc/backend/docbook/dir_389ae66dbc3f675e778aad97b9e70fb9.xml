@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_389ae66dbc3f675e778aad97b9e70fb9" xml:lang="en-US">
+<title>Login Directory Reference</title>
+<indexterm><primary>Login Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_d034aef18dff2fc3bff9093a968e501c">User</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__j_w_t_8cs">JWT.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

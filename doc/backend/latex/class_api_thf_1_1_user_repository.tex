@@ -1,0 +1,239 @@
+\hypertarget{class_api_thf_1_1_user_repository}{}\doxysection{Api\+Thf.\+User\+Repository Class Reference}
+\label{class_api_thf_1_1_user_repository}\index{ApiThf.UserRepository@{ApiThf.UserRepository}}
+Inheritance diagram for Api\+Thf.\+User\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_thf_1_1_user_repository}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_thf_1_1_user_repository_a70769a4aa9089bfff2025aab54023dd4}{User\+Repository}} ()
+\item 
+override void \mbox{\hyperlink{class_api_thf_1_1_user_repository_aefa5bf812a66d5646eda35959deb8784}{Save\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em Save the data to the file. \end{DoxyCompactList}\item 
+uint \mbox{\hyperlink{class_api_thf_1_1_user_repository_a0709bc49bc5b54c9db5099ae0bab8f2f}{Get\+New\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get a new id for a user. \end{DoxyCompactList}\item 
+async Task$<$ List$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ \mbox{\hyperlink{class_api_thf_1_1_user_repository_a6bf2e2b010b3bc4d8c852a29c29ec5b7}{Get\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Get all users. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ \mbox{\hyperlink{class_api_thf_1_1_user_repository_a9abf53d4a56ef403607953564b0e4623}{Get\+User\+By\+Id}} (uint id)
+\begin{DoxyCompactList}\small\item\em Get a user by id. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ \mbox{\hyperlink{class_api_thf_1_1_user_repository_a98c7947185b23024aa561724c33851a6}{Get\+User\+By\+Email\+And\+Password}} (string email, string password)
+\begin{DoxyCompactList}\small\item\em Get a user by email and password. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_api_thf_1_1_user_repository_a36634c48dae627bd53554ccc946b9311}{Verify\+User}} (\mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} user)
+\begin{DoxyCompactList}\small\item\em Verify a user. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ \mbox{\hyperlink{class_api_thf_1_1_user_repository_af663b92da3aa638592e2dd02e1ae0996}{Post\+User}} (\mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} user)
+\begin{DoxyCompactList}\small\item\em Get a user by id. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ \mbox{\hyperlink{class_api_thf_1_1_user_repository_a62d614fed211c64a138b6d885daa109e}{Put\+User\+By\+Id}} (uint id, \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} user)
+\begin{DoxyCompactList}\small\item\em Get a user by id. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ \mbox{\hyperlink{class_api_thf_1_1_user_repository_a6d37cb9970c1660c870b0d4b736b7145}{Delete\+User\+By\+Id}} (uint id)
+\begin{DoxyCompactList}\small\item\em Delete a user by id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_api_thf_1_1_repository}{Api\+Thf.\+Repository$<$ User $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_thf_1_1_repository_ab9f1d413dee10fd5042efc9ff098b9b4}{Repository}} (string file\+Name)
+\item 
+abstract void \mbox{\hyperlink{class_api_thf_1_1_repository_aa941638268140326e4100d344d4e8099}{Save\+Changes}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly string \mbox{\hyperlink{class_api_thf_1_1_user_repository_a9a5e7de77e0209f60ec2939f15fff07b}{file\+Name}} = \char`\"{}users.\+json\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_api_thf_1_1_repository}{Api\+Thf.\+Repository$<$ User $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+readonly List$<$ T $>$ \mbox{\hyperlink{class_api_thf_1_1_repository_a7aef5006a3cb8022a861c4c60fe33ac4}{Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a70769a4aa9089bfff2025aab54023dd4}\label{class_api_thf_1_1_user_repository_a70769a4aa9089bfff2025aab54023dd4}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!UserRepository@{UserRepository}}
+\index{UserRepository@{UserRepository}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{UserRepository()}{UserRepository()}}
+{\footnotesize\ttfamily Api\+Thf.\+User\+Repository.\+User\+Repository (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a6d37cb9970c1660c870b0d4b736b7145}\label{class_api_thf_1_1_user_repository_a6d37cb9970c1660c870b0d4b736b7145}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!DeleteUserById@{DeleteUserById}}
+\index{DeleteUserById@{DeleteUserById}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{DeleteUserById()}{DeleteUserById()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ Api\+Thf.\+User\+Repository.\+Delete\+User\+By\+Id (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Delete a user by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+\end{DoxyParams}
+
+
+This will not update the database, use Save\+Changes to do that 
+
+\begin{DoxyReturn}{Returns}
+The deleted user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a0709bc49bc5b54c9db5099ae0bab8f2f}\label{class_api_thf_1_1_user_repository_a0709bc49bc5b54c9db5099ae0bab8f2f}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!GetNewId@{GetNewId}}
+\index{GetNewId@{GetNewId}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{GetNewId()}{GetNewId()}}
+{\footnotesize\ttfamily uint Api\+Thf.\+User\+Repository.\+Get\+New\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a new id for a user. 
+
+\begin{DoxyReturn}{Returns}
+A new id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a98c7947185b23024aa561724c33851a6}\label{class_api_thf_1_1_user_repository_a98c7947185b23024aa561724c33851a6}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!GetUserByEmailAndPassword@{GetUserByEmailAndPassword}}
+\index{GetUserByEmailAndPassword@{GetUserByEmailAndPassword}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{GetUserByEmailAndPassword()}{GetUserByEmailAndPassword()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ Api\+Thf.\+User\+Repository.\+Get\+User\+By\+Email\+And\+Password (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})}
+
+
+
+Get a user by email and password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & The email of the user\\
+\hline
+{\em password} & The password of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user with the given email and password 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a9abf53d4a56ef403607953564b0e4623}\label{class_api_thf_1_1_user_repository_a9abf53d4a56ef403607953564b0e4623}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!GetUserById@{GetUserById}}
+\index{GetUserById@{GetUserById}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{GetUserById()}{GetUserById()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ Api\+Thf.\+User\+Repository.\+Get\+User\+By\+Id (\begin{DoxyParamCaption}\item[{uint}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a user by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user with the given id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a6bf2e2b010b3bc4d8c852a29c29ec5b7}\label{class_api_thf_1_1_user_repository_a6bf2e2b010b3bc4d8c852a29c29ec5b7}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!GetUsers@{GetUsers}}
+\index{GetUsers@{GetUsers}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{GetUsers()}{GetUsers()}}
+{\footnotesize\ttfamily async Task$<$ List$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}} $>$ $>$ Api\+Thf.\+User\+Repository.\+Get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all users. 
+
+\begin{DoxyReturn}{Returns}
+All users 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_af663b92da3aa638592e2dd02e1ae0996}\label{class_api_thf_1_1_user_repository_af663b92da3aa638592e2dd02e1ae0996}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!PostUser@{PostUser}}
+\index{PostUser@{PostUser}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{PostUser()}{PostUser()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ Api\+Thf.\+User\+Repository.\+Post\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Get a user by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+\end{DoxyParams}
+
+
+This will not update the database, use Save\+Changes to do that 
+
+\begin{DoxyReturn}{Returns}
+The user with the given id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a62d614fed211c64a138b6d885daa109e}\label{class_api_thf_1_1_user_repository_a62d614fed211c64a138b6d885daa109e}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!PutUserById@{PutUserById}}
+\index{PutUserById@{PutUserById}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{PutUserById()}{PutUserById()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}?$>$ Api\+Thf.\+User\+Repository.\+Put\+User\+By\+Id (\begin{DoxyParamCaption}\item[{uint}]{id,  }\item[{\mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Get a user by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the user\\
+\hline
+{\em image} & The image to add\\
+\hline
+\end{DoxyParams}
+
+
+This will not update the database, use Save\+Changes to do that 
+
+\begin{DoxyReturn}{Returns}
+The user with the given id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_aefa5bf812a66d5646eda35959deb8784}\label{class_api_thf_1_1_user_repository_aefa5bf812a66d5646eda35959deb8784}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!SaveChanges@{SaveChanges}}
+\index{SaveChanges@{SaveChanges}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{SaveChanges()}{SaveChanges()}}
+{\footnotesize\ttfamily override void Api\+Thf.\+User\+Repository.\+Save\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save the data to the file. 
+
+
+
+Implements \mbox{\hyperlink{class_api_thf_1_1_repository_aa941638268140326e4100d344d4e8099}{Api\+Thf.\+Repository$<$ User $>$}}.
+
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a36634c48dae627bd53554ccc946b9311}\label{class_api_thf_1_1_user_repository_a36634c48dae627bd53554ccc946b9311}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!VerifyUser@{VerifyUser}}
+\index{VerifyUser@{VerifyUser}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{VerifyUser()}{VerifyUser()}}
+{\footnotesize\ttfamily bool Api\+Thf.\+User\+Repository.\+Verify\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_api_thf_ae95307d937ccf769e4f3b3a6084bd805}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Verify a user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to verify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the user is valid 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_api_thf_1_1_user_repository_a9a5e7de77e0209f60ec2939f15fff07b}\label{class_api_thf_1_1_user_repository_a9a5e7de77e0209f60ec2939f15fff07b}} 
+\index{ApiThf.UserRepository@{ApiThf.UserRepository}!fileName@{fileName}}
+\index{fileName@{fileName}!ApiThf.UserRepository@{ApiThf.UserRepository}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily readonly string Api\+Thf.\+User\+Repository.\+file\+Name = \char`\"{}users.\+json\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Login/\+User/\mbox{\hyperlink{_user_repository_8cs}{User\+Repository.\+cs}}\end{DoxyCompactItemize}

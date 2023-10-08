@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_api_thf_1_1_user_repository" xml:lang="en-US">
+<title>ApiThf.UserRepository Class Reference</title>
+<indexterm><primary>ApiThf.UserRepository</primary></indexterm>
+<para>Inheritance diagram for ApiThf.UserRepository:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_api_thf_1_1_user_repository.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_user_repository_1a70769a4aa9089bfff2025aab54023dd4">UserRepository</link> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_api_thf_1_1_user_repository_1aefa5bf812a66d5646eda35959deb8784">SaveChanges</link> ()</para>
+
+<para>Save the data to the file. </para>
+</listitem>
+            <listitem><para>uint <link linkend="_class_api_thf_1_1_user_repository_1a0709bc49bc5b54c9db5099ae0bab8f2f">GetNewId</link> ()</para>
+
+<para>Get a new id for a user. </para>
+</listitem>
+            <listitem><para>async Task&lt; List&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; <link linkend="_class_api_thf_1_1_user_repository_1a6bf2e2b010b3bc4d8c852a29c29ec5b7">GetUsers</link> ()</para>
+
+<para>Get all users. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; <link linkend="_class_api_thf_1_1_user_repository_1a9abf53d4a56ef403607953564b0e4623">GetUserById</link> (uint id)</para>
+
+<para>Get a user by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; <link linkend="_class_api_thf_1_1_user_repository_1a98c7947185b23024aa561724c33851a6">GetUserByEmailAndPassword</link> (string email, string password)</para>
+
+<para>Get a user by email and password. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_api_thf_1_1_user_repository_1a36634c48dae627bd53554ccc946b9311">VerifyUser</link> (<link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</para>
+
+<para>Verify a user. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; <link linkend="_class_api_thf_1_1_user_repository_1af663b92da3aa638592e2dd02e1ae0996">PostUser</link> (<link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</para>
+
+<para>Get a user by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; <link linkend="_class_api_thf_1_1_user_repository_1a62d614fed211c64a138b6d885daa109e">PutUserById</link> (uint id, <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</para>
+
+<para>Get a user by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; <link linkend="_class_api_thf_1_1_user_repository_1a6d37cb9970c1660c870b0d4b736b7145">DeleteUserById</link> (uint id)</para>
+
+<para>Delete a user by id. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_api_thf_1_1_repository">ApiThf.Repository&lt; User &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_repository_1ab9f1d413dee10fd5042efc9ff098b9b4">Repository</link> (string fileName)</para>
+</listitem>
+            <listitem><para>abstract void <link linkend="_class_api_thf_1_1_repository_1aa941638268140326e4100d344d4e8099">SaveChanges</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static readonly string <link linkend="_class_api_thf_1_1_user_repository_1a9a5e7de77e0209f60ec2939f15fff07b">fileName</link> = &quot;users.json&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Protected Attributes inherited from <link linkend="_class_api_thf_1_1_repository">ApiThf.Repository&lt; User &gt;</link>        <itemizedlist>
+            <listitem><para>readonly List&lt; T &gt; <link linkend="_class_api_thf_1_1_repository_1a7aef5006a3cb8022a861c4c60fe33ac4">Data</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a70769a4aa9089bfff2025aab54023dd4"/><section>
+    <title>UserRepository()</title>
+<indexterm><primary>UserRepository</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>UserRepository</secondary></indexterm>
+<para><computeroutput>ApiThf.UserRepository.UserRepository ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a6d37cb9970c1660c870b0d4b736b7145"/><section>
+    <title>DeleteUserById()</title>
+<indexterm><primary>DeleteUserById</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>DeleteUserById</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; ApiThf.UserRepository.DeleteUserById (uint id)</computeroutput></para><para>
+
+<para>Delete a user by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The deleted user </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a0709bc49bc5b54c9db5099ae0bab8f2f"/><section>
+    <title>GetNewId()</title>
+<indexterm><primary>GetNewId</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>GetNewId</secondary></indexterm>
+<para><computeroutput>uint ApiThf.UserRepository.GetNewId ( )</computeroutput></para><para>
+
+<para>Get a new id for a user. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>A new id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a98c7947185b23024aa561724c33851a6"/><section>
+    <title>GetUserByEmailAndPassword()</title>
+<indexterm><primary>GetUserByEmailAndPassword</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>GetUserByEmailAndPassword</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; ApiThf.UserRepository.GetUserByEmailAndPassword (string email, string password)</computeroutput></para><para>
+
+<para>Get a user by email and password. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>email</entry><entry>
+<para>The email of the user</para>
+</entry>
+                            </row>
+                            <row>
+<entry>password</entry><entry>
+<para>The password of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The user with the given email and password </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a9abf53d4a56ef403607953564b0e4623"/><section>
+    <title>GetUserById()</title>
+<indexterm><primary>GetUserById</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>GetUserById</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; ApiThf.UserRepository.GetUserById (uint id)</computeroutput></para><para>
+
+<para>Get a user by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The user with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a6bf2e2b010b3bc4d8c852a29c29ec5b7"/><section>
+    <title>GetUsers()</title>
+<indexterm><primary>GetUsers</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>GetUsers</secondary></indexterm>
+<para><computeroutput>async Task&lt; List&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; ApiThf.UserRepository.GetUsers ( )</computeroutput></para><para>
+
+<para>Get all users. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>All users </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1af663b92da3aa638592e2dd02e1ae0996"/><section>
+    <title>PostUser()</title>
+<indexterm><primary>PostUser</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>PostUser</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; ApiThf.UserRepository.PostUser (<link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</computeroutput></para><para>
+
+<para>Get a user by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The user with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a62d614fed211c64a138b6d885daa109e"/><section>
+    <title>PutUserById()</title>
+<indexterm><primary>PutUserById</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>PutUserById</secondary></indexterm>
+<para><computeroutput>async Task&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link>?&gt; ApiThf.UserRepository.PutUserById (uint id, <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</computeroutput></para><para>
+
+<para>Get a user by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                            <row>
+<entry>image</entry><entry>
+<para>The image to add</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>This will not update the database, use SaveChanges to do that </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>The user with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1aefa5bf812a66d5646eda35959deb8784"/><section>
+    <title>SaveChanges()</title>
+<indexterm><primary>SaveChanges</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>SaveChanges</secondary></indexterm>
+<para><computeroutput>override void ApiThf.UserRepository.SaveChanges ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Save the data to the file. </para>
+</para>
+<para>
+Implements <link linkend="_class_api_thf_1_1_repository_1aa941638268140326e4100d344d4e8099">ApiThf.Repository&lt; User &gt;</link>.</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a36634c48dae627bd53554ccc946b9311"/><section>
+    <title>VerifyUser()</title>
+<indexterm><primary>VerifyUser</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>VerifyUser</secondary></indexterm>
+<para><computeroutput>bool ApiThf.UserRepository.VerifyUser (<link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</computeroutput></para><para>
+
+<para>Verify a user. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>user</entry><entry>
+<para>The user to verify</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Whether the user is valid </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_user_repository_1a9a5e7de77e0209f60ec2939f15fff07b"/><section>
+    <title>fileName</title>
+<indexterm><primary>fileName</primary><secondary>ApiThf.UserRepository</secondary></indexterm>
+<indexterm><primary>ApiThf.UserRepository</primary><secondary>fileName</secondary></indexterm>
+<para><computeroutput>readonly string ApiThf.UserRepository.fileName = &quot;users.json&quot;<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Login/User/<link linkend="__user_repository_8cs">UserRepository.cs</link></section>
+</section>

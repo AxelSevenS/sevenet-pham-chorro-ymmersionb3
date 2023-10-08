@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_api_thf_1_1_controller" xml:lang="en-US">
+<title>ApiThf.Controller&lt; T, TData &gt; Class Template Reference</title>
+<indexterm><primary>ApiThf.Controller&lt; T, TData &gt;</primary></indexterm>
+<para>Inheritance diagram for ApiThf.Controller&lt; T, TData &gt;:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_api_thf_1_1_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_controller_1a2896408b580b104f6c2a8b1080538905">Controller</link> (T <link linkend="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414">repository</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static bool <link linkend="_class_api_thf_1_1_controller_1ab19c0c03010e5e7271fb37d1023c563d">IsAuthValid</link> (HttpRequest request, out <link linkend="_namespace_api_thf_1ab2f5cf98fef22d0c9728c6a3b234591d">JWT</link>? token)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para>readonly T <link linkend="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414">repository</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_controller_1a2896408b580b104f6c2a8b1080538905"/><section>
+    <title>Controller()</title>
+<indexterm><primary>Controller</primary><secondary>ApiThf.Controller&lt; T, TData &gt;</secondary></indexterm>
+<indexterm><primary>ApiThf.Controller&lt; T, TData &gt;</primary><secondary>Controller</secondary></indexterm>
+<para><computeroutput><link linkend="_class_api_thf_1_1_controller">ApiThf.Controller</link>&lt; T, TData &gt;.<link linkend="_class_api_thf_1_1_controller">Controller</link> (T repository)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_controller_1ab19c0c03010e5e7271fb37d1023c563d"/><section>
+    <title>IsAuthValid()</title>
+<indexterm><primary>IsAuthValid</primary><secondary>ApiThf.Controller&lt; T, TData &gt;</secondary></indexterm>
+<indexterm><primary>ApiThf.Controller&lt; T, TData &gt;</primary><secondary>IsAuthValid</secondary></indexterm>
+<para><computeroutput>static bool <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller</link>&lt; T, TData &gt;.IsAuthValid (HttpRequest request, out <link linkend="_namespace_api_thf_1ab2f5cf98fef22d0c9728c6a3b234591d">JWT</link>? token)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414"/><section>
+    <title>repository</title>
+<indexterm><primary>repository</primary><secondary>ApiThf.Controller&lt; T, TData &gt;</secondary></indexterm>
+<indexterm><primary>ApiThf.Controller&lt; T, TData &gt;</primary><secondary>repository</secondary></indexterm>
+<para><computeroutput>readonly T <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller</link>&lt; T, TData &gt;.repository<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+<link linkend="__controller_8cs">Controller.cs</link></section>
+</section>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_47815c31304a25cb0754e6155a4b6838" xml:lang="en-US">
+<title>Product Directory Reference</title>
+<indexterm><primary>Product Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__product_8cs">Product.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__product_controller_8cs">ProductController.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__product_repository_8cs">ProductRepository.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

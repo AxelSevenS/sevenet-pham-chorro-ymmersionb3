@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ApiThf;
 
@@ -62,8 +63,13 @@ public record JWT {
         Base64UrlDecode(signature);
 
 
-    public static JWT? Parse(string jwt)
+    public static JWT? Parse(string? jwt)
     {
+        if (jwt is null)
+        {
+            return null;
+        }
+
         string[] parts = jwt.Split('.');
         if (parts.Length != 3)
         {
@@ -80,7 +86,7 @@ public record JWT {
             return false;
         }
 
-        return GenerateSignature() == signature;
+        return Base64UrlEncode(GenerateSignature()) == signature;
     }
 
     public static JWT Generate(User user)

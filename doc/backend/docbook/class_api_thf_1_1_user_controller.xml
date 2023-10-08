@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_api_thf_1_1_user_controller" xml:lang="en-US">
+<title>ApiThf.UserController Class Reference</title>
+<indexterm><primary>ApiThf.UserController</primary></indexterm>
+<para>Inheritance diagram for ApiThf.UserController:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_api_thf_1_1_user_controller.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_user_controller_1a1de8394ecebf17ddf5bb616c9d37fd4d">UserController</link> (<link linkend="_class_api_thf_1_1_user_repository">UserRepository</link> <link linkend="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414">repository</link>)</para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; List&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; &gt; <link linkend="_class_api_thf_1_1_user_controller_1a7080af41661daaa8ed65a7acf8e90c8f">GetAll</link> ()</para>
+
+<para>Get all users. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; <link linkend="_class_api_thf_1_1_user_controller_1a411a3a1a3b803469b4225ec7915637dd">GetById</link> (uint id)</para>
+
+<para>Get a user by id. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult &gt; <link linkend="_class_api_thf_1_1_user_controller_1a50ef0d67555489070d9c9623e2141c14">AuthenticateUser</link> ([FromForm]string email, [FromForm]string password)</para>
+
+<para>Authenticate a user. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; <link linkend="_class_api_thf_1_1_user_controller_1a70f5c0b6fb35f83f002c20eedb210404">RegisterUser</link> ([FromForm]string email, [FromForm]string password)</para>
+
+<para>Register a user. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; <link linkend="_class_api_thf_1_1_user_controller_1a48d9140427b4f41ec2764c1336803e22">UpdateUser</link> (uint id, [FromForm] <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</para>
+
+<para>Update a user. </para>
+</listitem>
+            <listitem><para>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; <link linkend="_class_api_thf_1_1_user_controller_1a81eb0c2600b637aec9b18480a69224b8">DeleteUser</link> (uint id)</para>
+
+<para>Delete a user. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; UserRepository, User &gt;</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_api_thf_1_1_controller_1a2896408b580b104f6c2a8b1080538905">Controller</link> (T repository)</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Public Member Functions inherited from <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; UserRepository, User &gt;</link>        <itemizedlist>
+            <listitem><para>static bool <link linkend="_class_api_thf_1_1_controller_1ab19c0c03010e5e7271fb37d1023c563d">IsAuthValid</link> (HttpRequest request, out JWT? token)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Attributes inherited from <link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; UserRepository, User &gt;</link>        <itemizedlist>
+            <listitem><para>readonly T <link linkend="_class_api_thf_1_1_controller_1a1d1c07d497c2bd3311845bd2e92e1414">repository</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a1de8394ecebf17ddf5bb616c9d37fd4d"/><section>
+    <title>UserController()</title>
+<indexterm><primary>UserController</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>UserController</secondary></indexterm>
+<para><computeroutput>ApiThf.UserController.UserController (<link linkend="_class_api_thf_1_1_user_repository">UserRepository</link> repository)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a50ef0d67555489070d9c9623e2141c14"/><section>
+    <title>AuthenticateUser()</title>
+<indexterm><primary>AuthenticateUser</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>AuthenticateUser</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult &gt; ApiThf.UserController.AuthenticateUser ([FromForm] string email, [FromForm] string password)</computeroutput></para><para>
+
+<para>Authenticate a user. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>email</entry><entry>
+<para>The email of the user</para>
+</entry>
+                            </row>
+                            <row>
+<entry>password</entry><entry>
+<para>The password of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The JWT token of the user, or NotFound if the user does not exist, or BadRequest if the email/password is incorrect </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a81eb0c2600b637aec9b18480a69224b8"/><section>
+    <title>DeleteUser()</title>
+<indexterm><primary>DeleteUser</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>DeleteUser</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; ApiThf.UserController.DeleteUser (uint id)</computeroutput></para><para>
+
+<para>Delete a user. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The deleted user </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a7080af41661daaa8ed65a7acf8e90c8f"/><section>
+    <title>GetAll()</title>
+<indexterm><primary>GetAll</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>GetAll</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; List&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; &gt; ApiThf.UserController.GetAll ( )</computeroutput></para><para>
+
+<para>Get all users. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>All users </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a411a3a1a3b803469b4225ec7915637dd"/><section>
+    <title>GetById()</title>
+<indexterm><primary>GetById</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>GetById</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; ApiThf.UserController.GetById (uint id)</computeroutput></para><para>
+
+<para>Get a user by id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The user with the given id </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a70f5c0b6fb35f83f002c20eedb210404"/><section>
+    <title>RegisterUser()</title>
+<indexterm><primary>RegisterUser</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>RegisterUser</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; ApiThf.UserController.RegisterUser ([FromForm] string email, [FromForm] string password)</computeroutput></para><para>
+
+<para>Register a user. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>email</entry><entry>
+<para>The email of the user</para>
+</entry>
+                            </row>
+                            <row>
+<entry>password</entry><entry>
+<para>The password of the user</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The user, or BadRequest if the user already exists </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_api_thf_1_1_user_controller_1a48d9140427b4f41ec2764c1336803e22"/><section>
+    <title>UpdateUser()</title>
+<indexterm><primary>UpdateUser</primary><secondary>ApiThf.UserController</secondary></indexterm>
+<indexterm><primary>ApiThf.UserController</primary><secondary>UpdateUser</secondary></indexterm>
+<para><computeroutput>async Task&lt; ActionResult&lt; <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> &gt; &gt; ApiThf.UserController.UpdateUser (uint id, [FromForm] <link linkend="_namespace_api_thf_1ae95307d937ccf769e4f3b3a6084bd805">User</link> user)</computeroutput></para><para>
+
+<para>Update a user. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>The id of the user</para>
+</entry>
+                            </row>
+                            <row>
+<entry>user</entry><entry>
+<para>The user to update</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The updated user </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Login/User/<link linkend="__user_controller_8cs">UserController.cs</link></section>
+</section>

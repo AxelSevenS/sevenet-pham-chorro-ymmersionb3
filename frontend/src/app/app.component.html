@@ -11,6 +11,10 @@
 		</button>
 		
 		<div class="spacer"></div>
+		<button *ngIf="currentUser" id="home-link" [routerLink]="['/addProduct']">
+			<span>Ajouter un Produit</span>
+			<!-- <fa-icon [icon]="homeIcon" class=""></fa-icon> -->
+		</button>
 		<button id="home-link" [routerLink]="['/']">
 			<span>Accueil</span>
 			<fa-icon [icon]="homeIcon" class=""></fa-icon>

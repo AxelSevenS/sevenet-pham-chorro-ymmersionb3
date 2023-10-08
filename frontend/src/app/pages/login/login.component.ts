@@ -41,14 +41,14 @@ export class LoginComponent {
 					return;
 				}
 
-				this.loginService.setJWT(loginResult);
+				LoginService.setJWT(loginResult);
 				this.router.navigate(['/']);
 			}
 		);
 	}
 	
 	public logout = () => {
-		this.loginService.resetJWT();
+		LoginService.resetJWT();
 		this.router.navigate(['/']);
 	}
 }

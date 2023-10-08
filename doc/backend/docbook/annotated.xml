@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_class_api_thf_1_1_controller">ApiThf.Controller&lt; T, TData &gt;</link><link linkend="_class_api_thf_1_1_product_controller">ApiThf.ProductController</link><link linkend="_class_api_thf_1_1_product_repository">ApiThf.ProductRepository</link><link linkend="_class_api_thf_1_1_repository">ApiThf.Repository&lt; T &gt;</link><link linkend="_class_api_thf_1_1_user_controller">ApiThf.UserController</link><link linkend="_class_api_thf_1_1_user_repository">ApiThf.UserRepository</link></section>

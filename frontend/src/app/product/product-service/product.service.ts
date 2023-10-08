@@ -3,6 +3,7 @@ import { Product } from '../product-model/product.model';
 import { environment } from '../../../../../environment';
 import { Observable, lastValueFrom } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { LoginService } from 'src/app/login/login-service/login.service';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,7 +11,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class ProductService {
 
 	constructor(
-		private http: HttpClient
+		private http: HttpClient,
 	) {}
 
 	private _products: Map<number, Product> = new Map<number, Product>();
@@ -60,6 +61,12 @@ export class ProductService {
 	 * });
 	 */
 	public addProduct = (product: Product, files: File[]): Observable<Product> => {
+		console.log('addProduct');
+		const jwt = LoginService.getJWT();
+		const headers = {
+			'Authorization': jwt ? 'Bearer ' + LoginService.getJWT() : ''
+		};
+
 		let body = new FormData();
 		body.append('name', product.name);
 		body.append('description', product.description);
@@ -69,7 +76,7 @@ export class ProductService {
 			body.append(`image${i}`, files[i], files[i].name);
 		}
 
-		let queryResponse = this.http.post<Product>(environment.domainUrl + 'api/products', body);
+		let queryResponse = this.http.post<Product>(environment.domainUrl + 'api/products/', body);
 		queryResponse.subscribe(response => {
 			if (response instanceof HttpErrorResponse) {
 				return;
@@ -82,7 +89,7 @@ export class ProductService {
 	/**
 	 * @description Update a product in the database
 	 * @param {number} id
-	 * @param {Product} product
+	 * @param {number} quantity
 	 * @returns {Observable<Product | HttpErrorResponse>} The product that was updated
 	 * @memberof ProductService
 	 * @example
