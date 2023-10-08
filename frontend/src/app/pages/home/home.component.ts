@@ -7,7 +7,7 @@ import { ProductService } from '../../product/product-service/product.service';
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
 	products: Product[] = [];
 	
@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit {
 	minPrice: number | boolean = false;
 	maxPrice: number | boolean = false;
 	
-	public constructor(private productService: ProductService) {}
-
-	async ngOnInit(): Promise<void> {
-		this.products = await this.productService.getProducts();
+	public constructor(private productService: ProductService) {	
+		this.productService.getProducts()
+			.subscribe(products => {
+				this.products = products;
+			});
 	}
 }

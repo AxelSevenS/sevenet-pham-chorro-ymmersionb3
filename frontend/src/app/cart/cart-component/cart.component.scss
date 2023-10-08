@@ -1,23 +1,53 @@
 @import "../../variables.scss";
 
 :host {
-    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+#cart-item-container {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#cart-empty {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    right: 0;
-    width: $sidebar-width;
-    height: calc(100vh - $toolbar-height);
-    height: fit-content;
-    overflow-y: scroll;
-    top: $toolbar-height;
-    background-color: white;
-    border: 1px solid;
-    border-color: black;
-    border-radius: 15px 0 0 15px;
+    justify-content: center;
+    font-size: 1.5rem;
+}
 
-    padding: 10px;
+#cart-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
 
-    
+#price-total {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    // padding-bottom: 5rem;
+}
+
+#checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

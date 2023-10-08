@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../product-model/product.model';
-import { environment } from '../../shared/environment';
+import { environment } from '../../../../../environment';
 import { CartService } from 'src/app/cart/cart-service/cart.service';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,19 +12,26 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 export class ProductPreviewStoreComponent {
 
 	private _product: (Product | null) = null;
-	get product(): Product { return this._product as Product; }
-	@Input() set product(product: (Product | null)) { this._product = product; }
+		public get product(): Product { return this._product as Product; }
+		@Input() public set product(product: (Product | null)) { this._product = product; }
 
-	get urlBase() { return environment.domainUrl }
+	public get urlBase() { return environment.domainUrl }
 
-	get cartIcon() { return faCartShopping; }
-
-
-	public constructor(private cartService: CartService) {}
+	public get cartIcon() { return faCartShopping; }
 
 
-	addToCart = async () => {
-		await this.cartService.addItem(this.product.id);
+	public constructor(
+		private cartService: CartService
+	) {}
+
+
+	/**
+	 * @description Add the product to the cart
+	 * @returns {Promise<void>}
+	 * @memberof ProductPreviewStoreComponent
+	 */
+	public addToCart = async () => {
+		await this.cartService.addItem(this.product);
 	}
 
 }

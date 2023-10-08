@@ -8,6 +8,11 @@ namespace ApiThf;
 public class ProductRepository : Repository<Product>
 {
     public static readonly string fileName = "data.json";
+    public static readonly string[] acceptedImageTypes = new[]
+    { 
+        "image/jpeg", 
+        "image/png"
+    };
 
 
     public ProductRepository() : base(fileName) {}
@@ -27,12 +32,23 @@ public class ProductRepository : Repository<Product>
 
     public async Task<HttpResponseMessage> AddImage(uint id, IFormFile image)
     {
-        if (image.ContentType != "image/jpeg" && image.ContentType != "image/png") {
+        bool isValidMime = false;
+        for (int i = 0; i < acceptedImageTypes.Length; i++)
+        {
+            if (image.ContentType == acceptedImageTypes[i])
+            {
+                isValidMime = true;
+                break;
+            }
+        }
+        if (!isValidMime)
+        {
             return new HttpResponseMessage(HttpStatusCode.UnsupportedMediaType);
         }
 
         Product? product = await GetProductById(id);
-        if (product is null) {
+        if (product is null)
+        {
             return new HttpResponseMessage(HttpStatusCode.NotFound);
         }
 
@@ -42,7 +58,8 @@ public class ProductRepository : Repository<Product>
         string imagePath = Path.Combine(imageLocation, image.FileName);
         string path = Path.Combine(Directory.GetCurrentDirectory(), imagePath);
 
-        using (FileStream stream = new(path, FileMode.Create)) {
+        using (FileStream stream = new(path, FileMode.Create))
+        {
             await image.CopyToAsync(stream);
         }
 
@@ -59,9 +76,9 @@ public class ProductRepository : Repository<Product>
 
     public async Task<Product?> PostProductAsync(Product product)
     {
-        return await Task.Run(() => {
+        return await Task.Run(() =>
+        {
             Data.Add(product);
-
             return product;
         });
     }

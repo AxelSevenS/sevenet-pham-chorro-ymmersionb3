@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Collections.Generic;
 using System.Net;
 
@@ -51,23 +52,26 @@ public class ProductController : Controller<ProductRepository, Product>
     [HttpPost("{id}/images")]
     public async Task<ActionResult> PostImages(uint id)
     {
-        if (id == 0) {
+        // check if form is valid
+        if (id == 0 || !HttpContext.Request.HasFormContentType)
+        {
             return BadRequest();
         }
-
         IFormCollection httpRequest = HttpContext.Request.Form;
 
-        bool failed = false;
+        ModelStateDictionary modelState = new();
         foreach (IFormFile file in httpRequest.Files)
         {
             HttpResponseMessage response = await repository.AddImage(id, file);
-            if (response.StatusCode != HttpStatusCode.OK) {
-                failed = true;
+            if (response.StatusCode != HttpStatusCode.OK)
+            {
+                modelState.AddModelError(file.Name, response.ReasonPhrase ?? "Unknown error");
             }
         }
 
-        if (failed) {
-            return BadRequest();
+        if (modelState.Count > 0)
+        {
+            return BadRequest(modelState);
         }
 
         return Ok();
@@ -76,12 +80,14 @@ public class ProductController : Controller<ProductRepository, Product>
     [HttpPut("{id}")]
     public async Task<ActionResult<Product>> Put(uint id, [FromForm] Product product)
     {
-        if (id == 0) {
+        if (id == 0)
+        {
             return BadRequest();
         }
         
         Product? oldProduct = await repository.GetProductById(id);
-        if (oldProduct is null) {
+        if (oldProduct is null)
+        {
             return NotFound();
         }
 
@@ -92,7 +98,8 @@ public class ProductController : Controller<ProductRepository, Product>
             Price = product.Price ?? oldProduct?.Price,
             Images = product.Images ?? oldProduct?.Images,
         });
-        if (result is null) {
+        if (result is null)
+        {
             return NotFound();
         }
 
@@ -105,12 +112,14 @@ public class ProductController : Controller<ProductRepository, Product>
     [HttpDelete("{id}")]
     public async Task<ActionResult> Delete(uint id)
     {
-        if (id == 0) {
+        if (id == 0)
+        {
             return BadRequest();
         }
 
         Product? product = await repository.GetProductById(id);
-        if (product == null) {
+        if (product == null)
+        {
             return NotFound();
         }
 

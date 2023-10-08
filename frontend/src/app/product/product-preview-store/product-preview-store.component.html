@@ -1,6 +1,6 @@
-
 <div class="product-preview-store" *ngIf="product">
-    <a [routerLink]="['/products/']" [queryParams]="{id: product.id}">
+
+    <a [routerLink]="['/products', product.id]">
         <div class="product-preview-image-container">
             <img *ngIf="product.images && product.images[0] as image" src="{{ urlBase + image }}" class="product-preview-image" alt="">
         </div>
@@ -8,37 +8,40 @@
         <span class="product-preview-name">
             {{ product.name }}
         </span>
-        <br>
         <span class="product-preview-price">
             <span>{{ product.price }}</span><span>€</span>
         </span>
     </a>
-    
-    <br>
 
-    <button (click)="addToCart()">
-        <fa-icon [icon]="cartIcon"></fa-icon>
-    </button>
+    <ng-template [ngIf]="product.stock != 0" [ngIfElse]="noStock">
 
-    <br>
+        <button (click)="addToCart()">
+            <span>Ajouter au panier</span>
+            <fa-icon [icon]="cartIcon"></fa-icon>
+        </button>
 
-    <span>
-        <ng-template [ngIf]="product.stock != 0" [ngIfElse]="noStock">
-            <span>
-                <span>Stock: </span>
-                <span
-                    [ngClass]="{'product-preview-stock-orange': product.stock > 0 && product.stock < 10,
-                        'product-preview-stock-green': product.stock >= 10
-                    }"
-                >
-                    {{ product.stock }}
-                </span>
+        <span>
+            <span>Stock: </span>
+            <span
+                [ngClass]="{'product-preview-stock-orange': product.stock > 0 && product.stock < 10,
+                    'product-preview-stock-green': product.stock >= 10
+                }"
+            >
+                {{ product.stock }}
             </span>
-        </ng-template>
-        <ng-template #noStock>
-            <span class="product-preview-stock-red">
-                Rupture de Stock
-            </span>
-        </ng-template>
-    </span>
+        </span>
+
+    </ng-template>
+    <ng-template #noStock>
+
+        <button disabled>
+            <span>Ajouter au panier</span>
+            <fa-icon [icon]="cartIcon"></fa-icon>
+        </button>
+
+        <span class="product-preview-stock-red">
+            Rupture de Stock
+        </span>
+        
+    </ng-template>
 </div>

@@ -27,11 +27,49 @@ public class UserController : Controller<UserRepository, User>
         };
     }
 
+    
+    [HttpPost("login")]
+    public async Task<ActionResult<JWT>> AuthenticateUser([FromForm]string email, [FromForm]string password)
+    {
+        return await repository.GetUserByEmailAndPassword(email, JWT.HashPassword(password)) switch
+        {
+            null => NotFound(),
+            User user => Ok(JWT.Generate(user)),
+        };
+    }
+
+    [HttpPost("register")]
+    public async Task<ActionResult<User>> RegisterUser([FromForm]string email, [FromForm]string password)
+    {
+        User? result = await repository.PostUser( new()
+        {
+            email = email,
+            password = JWT.HashPassword(password)
+        });
+
+        if (result is null)
+        {
+            return BadRequest();
+        }
+
+        repository.SaveChanges();
+        return Ok(result);
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult<User>> UpdateUser(uint id, [FromForm] User user)
     {
-        User? result = await repository.PutUserById(id, user);
-        if (result is null) {
+        if (user is null)
+        {
+            return BadRequest();
+        }
+
+        User? result = await repository.PutUserById(id, user with
+        {
+            password = JWT.HashPassword(user.password ?? "")
+        });
+        if (result is null)
+        {
             return NotFound();
         }
 
@@ -43,35 +81,9 @@ public class UserController : Controller<UserRepository, User>
     public async Task<ActionResult<User>> DeleteUser(uint id)
     {
         User? result = await repository.DeleteUserById(id);
-        if (result is null) {
-            return NotFound();
-        }
-
-        repository.SaveChanges();
-        return Ok(result);
-    }
-
-    
-    [HttpPost("login")]
-    public async Task<ActionResult<JWT>> AuthenticateUser([FromForm]string email, [FromForm]string password)
-    {
-        return await repository.GetUserByEmailAndPassword(email, password) switch
+        if (result is null)
         {
-            null => NotFound(),
-            User user => Ok(JWT.Generate(user)),
-        };
-    }
-
-    [HttpPost("register")]
-    public async Task<ActionResult<User>> RegisterUser([FromForm]string email, [FromForm]string password)
-    {
-        User? result = await repository.PostUser( new User() {
-            email = email, 
-            password = password
-
-        });
-        if (result is null) {
-            return BadRequest();
+            return NotFound();
         }
 
         repository.SaveChanges();

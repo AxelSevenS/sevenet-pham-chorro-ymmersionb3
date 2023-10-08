@@ -12,7 +12,7 @@
     <body>​
         <span class="searchbar-container">
             <input type="text" matInput placeholder="Recherche..." [(ngModel)]="searchText">
-            <button class="searchbar-button" id="searchbar-button" type="submit">Rechercher</button>
+            <button class="important" type="submit">Rechercher</button>
         </span>
         <span class="sorting-container">
             
@@ -44,7 +44,7 @@
 
         </span>
         <ol>
-            <product-preview-store *ngFor="let product of products | productTextFilter: searchText | stockFilter: cullOutOfStock | sortBy: sortingMethod | clampPrice: minPrice: maxPrice; let i = index" [product]="product"></product-preview-store>
+            <product-preview-store *ngFor="let product of products | productTextFilter: searchText | stockFilter: cullOutOfStock | clampPrice: minPrice: maxPrice | sortBy: sortingMethod; let i = index" [product]="product"></product-preview-store>
         </ol>
 
     </body>​

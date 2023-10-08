@@ -1,11 +1,24 @@
 <ng-template [ngIf]="cartItems && cartItems.length === 0" [ngIfElse]="haveItemsInCart">
-    <span>
+    <span id="cart-empty">
         Votre panier est vide
+        <fa-icon [icon]="cartIcon"></fa-icon>
     </span>
 </ng-template>
 <ng-template #haveItemsInCart>
-    <product-preview-cart *ngFor="let cartItem of cartItems; let i = index" [cartItem]="cartItem" [removeItemCallback]="removeItem" [updateQuantityCallback]="updateQuantity"/>
-    <span>
-        TOTAL : {{ totalPrice }} €
+    <div id="cart-item-container">
+        <product-preview-cart *ngFor="let cartItem of cartItems; let i = index" [cartItem]="cartItem" [removeItemCallback]="removeItem" [updateQuantityCallback]="updateQuantity"/>
+    </div>
+    <span id="price-total">
+        TOTAL : {{ totalPrice }}€
+    </span>
+    <span id="cart-buttons">
+        <button (click)="clearCart()">
+            <span>Vider le panier</span>
+            <fa-icon [icon]="trashIcon"></fa-icon>
+        </button>
+        <button *ngIf="checkoutButton" id="checkout" [routerLink]="['/checkout']">
+            <span>Passer la commande</span>
+            <fa-icon [icon]="checkoutIcon"></fa-icon>
+        </button>
     </span>
 </ng-template>

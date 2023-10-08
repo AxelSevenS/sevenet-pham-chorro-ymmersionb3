@@ -6,6 +6,7 @@ import { Product } from '../product/product-model/product.model';
  	name: 'productTextFilter'
 })
 export class ProductTextFilterPipe implements PipeTransform {
+	
 	transform(items: Product[] | null, searchText: string): Product[] {
 		if(!items) return [];
 		if(!searchText) return items;

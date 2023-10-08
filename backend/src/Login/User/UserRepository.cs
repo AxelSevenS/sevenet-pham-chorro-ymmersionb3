@@ -12,14 +12,18 @@ public class UserRepository : Repository<User>
     public UserRepository() : base(fileName) {}
 
 
-    public async Task<List<User>> GetUsers() {
+    public async Task<List<User>> GetUsers()
+    {
         return await Task.Run(() => Data);
     }
 
     
-    public async Task<User?> PostUser(User user) {
-        return await Task.Run(() => {
-            if (Data.Any(u => u.email == user.email)) {
+    public async Task<User?> PostUser(User user)
+    {
+        return await Task.Run(() =>
+        {
+            if (Data.Any(u => u.email == user.email))
+            {
                 return null;
             }
 
@@ -31,13 +35,24 @@ public class UserRepository : Repository<User>
         });
     }
 
-    public async Task<User?> PutUserById(uint id, User user) {
-        return await Task.Run(() => {
+    public async Task<User?> PutUserById(uint id, User user)
+    {
+        if (user is null) return null;
+
+        return await Task.Run(() =>
+        {
             User? oldUser = Data.FirstOrDefault(u => u.id == id);
-            if (oldUser is not null) {
-                oldUser = Data[Data.IndexOf(oldUser)] = oldUser with {
-                    email = user?.email ?? oldUser.email,
-                    password = user?.password ?? oldUser.password,
+
+            if (oldUser is not null)
+            {
+                // replace if new data was provided
+                string? newEmail = user.email ?? oldUser.email;
+                string? newPassword = user.password ?? oldUser.password;
+
+                oldUser = Data[Data.IndexOf(oldUser)] = oldUser with
+                {
+                    email = newEmail,
+                    password = newPassword,
                 };
             }
 
@@ -46,10 +61,13 @@ public class UserRepository : Repository<User>
         });
     }
 
-    public async Task<User?> DeleteUserById(uint id) {
-        return await Task.Run(() => {
+    public async Task<User?> DeleteUserById(uint id)
+    {
+        return await Task.Run(() =>
+        {
             User? user = Data.FirstOrDefault(u => u.id == id);
-            if (user is not null) {
+            if (user is not null)
+            {
                 Data.Remove(user);
             }
 
@@ -58,24 +76,27 @@ public class UserRepository : Repository<User>
         });
     }
 
-    public async Task<User?> GetUserById(uint id) {
+    public async Task<User?> GetUserById(uint id)
+    {
         return await Task.Run(() => Data.FirstOrDefault(u => u.id == id));
     }
 
-    public async Task<User?> GetUserByEmailAndPassword(string email, string password) {
+    public async Task<User?> GetUserByEmailAndPassword(string email, string password)
+    {
         return await Task.Run(() => Data.FirstOrDefault(u => u.email == email && u.password == password));
-        
     }
 
 
-    public bool VerifyUser(User user) {
+    public bool VerifyUser(User user)
+    {
         return Data.Any(u => u.email == user.email && u.password == user.password);
     }
 
 
     
 
-    public override void SaveChanges() {
+    public override void SaveChanges()
+    {
         string jsonString = JsonSerializer.Serialize(Data);
         File.WriteAllText(fileName, jsonString);
     }

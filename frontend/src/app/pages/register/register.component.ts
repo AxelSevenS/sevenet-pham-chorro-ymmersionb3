@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { LoginService } from 'src/app/login/login-service/login.service';
 import { User } from 'src/app/login/user-model/user.model';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -13,41 +14,42 @@ import { User } from 'src/app/login/user-model/user.model';
 export class RegisterComponent {
 	constructor(private loginService: LoginService, private router: Router) { }
 
-	email = new FormControl('');
-	password = new FormControl('');
+	public email = new FormControl('');
+	public password = new FormControl('');
 
-	submit = async () => {
+	public submit = () => {
 		const email = this.email.getRawValue();
 		const password = this.password.getRawValue();
-		// const email = document.getElementById('register-email'.value);
-		// const password = document.getElementById('register-password');
+		
 		if (email === '' || password === '' || email === null || password === null) {
-			alert('Invalid input');
-			return;
-		} else {
-			if (password.length < 8) {
-				alert('Password must be at least 8 characters long');
-				return;
-			}
-			if (email?.includes('@') === false) {
-				alert('Invalid email');
-				return;
-			}
-
-		}
-		
-		if (typeof email !== 'string' || typeof password !== 'string') {
-			alert('Invalid input');
-			return;
-		}
-		
-		let loginResult: (User | Error) = await this.loginService.tryRegister(email, password);
-		if (loginResult instanceof Error) {
-			alert("Register failed");
+			alert('Veuillez remplir tous les champs');
 			return;
 		}
 
-		this.router.navigate(['/login']);
+		const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+		if (!passwordRegex.test(password)) {
+			alert('Le mot de passe doit contenir au moins 8 caractères dont une majuscule et un chiffre');
+			return;
+		}
+
+		const emailRegex = /\S+@\S+\.\S+/;
+		if (!emailRegex.test(email)) {
+			alert('Veuillez entrer une adresse email valide');
+			return;
+		}
+
+
+		this.loginService.tryRegister(email, password)
+			.subscribe(loginResult => {
+				if (loginResult instanceof HttpErrorResponse) {
+					alert(`Erreur lors de l'inscription : ${loginResult.error.message}`);
+					return;
+				}
+
+				// success
+				this.router.navigate(['/login']);
+			}
+		);
     };
 }
 

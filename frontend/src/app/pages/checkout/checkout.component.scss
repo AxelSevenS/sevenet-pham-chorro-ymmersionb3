@@ -1,0 +1,87 @@
+
+
+#address-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    // margin-bottom: 5rem;
+    height: 600px;
+}
+
+.form-address-container {
+    display: flex;
+    justify-content: center;
+    // width: 50%;
+    // height: 50%;
+    margin: 5rem;
+}
+
+.address-iframe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+    gap: 2.5rem;
+    
+    & iframe {
+        height: 450px;    
+    }
+    
+    & > * {
+        width: 100%;
+    }
+}
+
+#form-adress {
+    width: 25rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    border: none;
+    box-shadow: none;
+    align-items: center;
+
+    & label {
+        flex-direction: row;
+    }
+    & input {
+        flex-direction: none ;
+    }
+    
+}
+.form-adress-button {
+    align-items: center;
+    margin-top: 1rem;
+    margin-left:3.5rem;
+}
+
+.adress-contain-text{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & p {
+       display:flex;
+       align-items: center;
+    }
+}
+
+.size {
+    font-size: 1rem;
+}
+
+.end-checkout-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    & button {
+
+        height:1rem;
+        width: 10rem;
+    }
+}

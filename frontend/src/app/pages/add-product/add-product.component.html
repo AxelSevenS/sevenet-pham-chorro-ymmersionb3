@@ -1,0 +1,32 @@
+<form action="" method="post">
+    <title>Ajouter un Produit</title>
+
+    <div class="form-entry">
+        <label for="name">Nom du Produit</label>
+        <input type="text" name="name" id="name" placeholder="Nom du Produit" [(ngModel)]="name" required>
+    </div>
+    
+    <div class="form-entry">
+        <label for="description">Description du Produit</label>
+        <textarea name="description" id="description" cols="30" rows="10" [(ngModel)]="description"></textarea>
+    </div>
+
+    <div class="form-entry">
+        <label for="price">Prix du Produit</label>
+        <input type="number" name="price" id="price" min="0" placeholder="Prix du Produit" required [(ngModel)]="price">
+    </div>
+
+    <div class="form-entry">
+        <label for="stock">Stocks du Produit</label>
+        <input type="number" name="stock" id="stock" min="0" placeholder="Stocks du Produit" required [(ngModel)]="stock">
+    </div>
+
+    <div class="form-entry">
+        <label for="files">Images du Produit</label>
+        <input type="file" name="files" id="files" [accept]="fileTypes" multiple (change)="onFilesSelected($event)">
+    </div>
+
+    <button (click)="submitProduct()">
+        Ajouter le Produit
+    </button>
+</form>

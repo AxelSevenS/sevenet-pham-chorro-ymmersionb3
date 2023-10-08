@@ -4,17 +4,14 @@
 
 <body>
 	
-	<div class="toolbar" role="banner">
-		<div class="logo">
-
+	<div id="toolbar" role="banner">
+		<button class="logo" [routerLink]="['/']">
 			<span class="title">Amasone</span>
 			<img src="../assets/img/Amasone.png" alt="logo">
-
-
-		</div>
+		</button>
 		
 		<div class="spacer"></div>
-		<button class="home" [routerLink]="['/']">
+		<button id="home-link" [routerLink]="['/']">
 			<span>Accueil</span>
 			<fa-icon [icon]="homeIcon" class=""></fa-icon>
 		</button>
@@ -34,17 +31,22 @@
 		<button class="cart-button" (click)="toggleCart()" id="cart-toggle">
 			<span>Mon Panier</span>
 			<fa-icon [icon]="cartIcon"></fa-icon>
-			<div *ngIf="totalCount>0"> 
-				<span id="cercle">{{ totalCount }}</span>
+			<div *ngIf="totalCartQuantity > 0"> 
+				<span id="cart-count-indicator">{{ totalCartQuantity }}</span>
 			</div>
 		</button>
 	</div>
 
 
-	<cart *ngIf="displayCart"/>
+	<div
+		[ngClass]="{ 'cart-open': isCartOpen }"
+	 	id="cart-container"
+	>
+		<cart #sidebarCart/>
+	</div>
 
 
-	<div class="content" role="main">
+	<div id="content" role="main">
 		<router-outlet></router-outlet>
 	</div>
 </body>

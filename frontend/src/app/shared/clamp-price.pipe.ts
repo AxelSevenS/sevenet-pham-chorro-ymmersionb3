@@ -6,6 +6,7 @@ import { Product } from '../product/product-model/product.model';
  	name: 'clampPrice'
 })
 export class ClampPricePipe implements PipeTransform {
+    
 	transform(items: Product[] | null, minPrice: number | boolean, maxPrice: number | boolean): Product[] {
 		if(!items) return [];
         

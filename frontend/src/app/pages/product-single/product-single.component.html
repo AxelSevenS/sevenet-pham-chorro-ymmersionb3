@@ -1,7 +1,5 @@
+<div class="product-single" *ngIf="product">
 
-
-
-<div class="product-single" *ngIf="product$ | async as product">
     <ngx-slick-carousel class="product-single-image-carousel" *ngIf="product.images && product.images.length != 0">
         <div ngxSlickItem *ngFor="let image of product.images" alt="">
             <img src="{{ urlBase + image }}" class="product-single-image" alt="">
@@ -9,14 +7,15 @@
     </ngx-slick-carousel>
     <div class="product-single-text">
         <div class="product-single-name">
-            {{ product.name }}
+            <span>{{ product.name }}</span>
         </div>
         <div class="product-single-price">
-            {{product.price}}<span>€</span>
+            <span>{{ product.price }}€</span>
         </div>
         <div class="product-single-stock">
             <span>
-                <span *ngIf="product.stock != 0">
+                <ng-template [ngIf]="product.stock != 0" [ngIfElse]="noStock">
+                    
                     <span>Stock: </span>
                     <span
                         [ngClass]="{'product-single-stock-orange': product.stock > 0 && product.stock < 10,
@@ -25,17 +24,29 @@
                     >
                             {{ product.stock }}
                     </span>
-                </span>
-                <span *ngIf="product.stock == 0" class="product-single-stock-red">
-                    Rupture de Stock
-                </span>
+
+                    <button (click)="addToCart()">
+                        <span>Ajouter au panier</span>
+                        <fa-icon [icon]="cartIcon"></fa-icon>
+                    </button>
+
+                </ng-template>
+                <ng-template #noStock>
+                    <span *ngIf="product.stock == 0" class="product-single-stock-red">
+                        Rupture de Stock
+                    </span>
+                    <button disabled>
+                        <span>Ajouter au panier</span>
+                        <fa-icon [icon]="cartIcon"></fa-icon>
+                    </button>
+                </ng-template>
             </span>
         </div>
         <div class="product-single-description">
-            {{ product.description }}
+            <span>
+                {{ product.description }}
+            </span>
         </div>
     </div>
-    <!-- <div class="product-single-image" *ngIf="product.images && product.images.length != 0">
-        <img *ngFor="let image of product.images" src="{{ urlBase + image }}" class="product-preview-image" alt="">
-    </div> -->
+    
 </div>

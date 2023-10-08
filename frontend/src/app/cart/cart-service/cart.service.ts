@@ -1,8 +1,8 @@
 import { HostListener, Injectable } from '@angular/core';
 import { CartItem } from '../cart-item-model/cart-item.model';
 import { integer } from 'src/app/shared/integer';
-import { Observable } from 'rxjs';
-import { ProductPreviewCartComponent } from '../product-preview-cart/product-preview-cart.component';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { ProductPreviewCartComponent } from '../../product/product-preview-cart/product-preview-cart.component';
 import { Product } from 'src/app/product/product-model/product.model';
 
 @Injectable({
@@ -10,113 +10,76 @@ import { Product } from 'src/app/product/product-model/product.model';
 })
 export class CartService {
 
-	static localStorageKey = 'cartItems';
+	private static readonly localStorageKey = 'cartItems';
 
-	items : CartItem[];
-	private static _totalPrice: number = 0;
-	public static cartProducts: [CartItem, Product][] = [];
 
-	static get totalPrice(): number { return CartService._totalPrice; }
+	private _items : CartItem[] = [];
+	private _itemsSubject = new BehaviorSubject<CartItem[]>(JSON.parse(localStorage.getItem(CartService.localStorageKey) || '[]'));
+	public items: Observable<CartItem[]> = this._itemsSubject.asObservable();
 
 
 	constructor() {
-		this.items = JSON.parse(localStorage.getItem(CartService.localStorageKey) || '[]');
-		this.updateCart();
+		this._itemsSubject.subscribe(items => {
+			this._items = items;
+		});
+	}
+
+	ngOnInit() {
+	}
+
+	private updateCart = (newCart: CartItem[]) => {
+		this._itemsSubject.next(newCart);
+		localStorage.setItem(CartService.localStorageKey, JSON.stringify(newCart));
 	}
 
 
-	private updateCart = async () => {
-		document.dispatchEvent(new CustomEvent('cartUpdated', {
-			detail: {
-				cartItems: this.items
+	public getCartItems = () => {
+		return this._items;
+	}
+
+	public clearCart = async () => {
+		this.updateCart([]);
+	}
+
+	public updateQuantity = async (id: integer, quantity: integer) => {
+		let inList = this._items.find(item => item.id === id);
+		if (inList) {
+			inList.quantity = quantity;
+		}
+		this.updateCart(this._items);
+	}
+
+	public addItem = (product: Product, quantity: integer = 1 as integer) => {
+		let inList = this._items.find(item => item.id === product.id);
+		if (inList) {
+			inList.quantity = clamp(inList.quantity + quantity as integer, product.stock) as integer;
+		} else {
+			this._items.push({
+				id: product.id,
+				quantity: clamp(quantity, product.stock)
+			});
+		}
+		this.updateCart(this._items);
+
+		function clamp(num: integer, max: integer): integer {
+			return num <= max ? num : max;
+		}
+	}
+
+	public removeItem = async (id: integer, quantity: integer = 1 as integer) => {
+		let inList = this._items.find(item => item.id === id);
+		if (inList) {
+			inList.quantity = (inList.quantity - quantity) as integer;
+			if (inList.quantity <= 0) {
+				this.deleteItem(id);
 			}
-		}));
+		}
+		this.updateCart(this._items);
 	}
 
-	public static updateTotalPrice = async () => {	
-		CartService._totalPrice = 0;
-		CartService.cartProducts.forEach(([cartItem, product]) => {
-			CartService._totalPrice += cartItem.quantity * product.price;
-		});
-		CartService._totalPrice = Math.round(CartService._totalPrice * 100) / 100;
-	}
-
-	public async getTotalQuantity(): Promise<integer> {
-		return new Promise<integer>(resolve => {
-			resolve(this.items.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0) as integer);
-		});
-	}
-
-
-	public async getCartItems(): Promise<CartItem[]> {
-		return new Promise<CartItem[]>(resolve => {
-			resolve(this.items);
-		});
-	}
-
-	public async updateQuantity(id: integer, quantity: integer): Promise<CartItem[]> {
-		return new Promise<CartItem[]>(resolve => {
-
-			let inList = this.items.find(item => item.id === id);
-			if (inList) {
-				inList.quantity = quantity;
-			}
-			localStorage.setItem(CartService.localStorageKey, JSON.stringify(this.items));
-			this.updateCart();
-			CartService.updateTotalPrice();
-
-			resolve(this.items);
-		});
-	}
-
-	public async addItem(id: integer, quantity: integer = 1 as integer): Promise<CartItem[]> {
-		return new Promise<CartItem[]>(resolve => {
-
-			let inList = this.items.find(item => item.id === id);
-			if (inList) {
-				inList.quantity = (inList.quantity + quantity) as integer;
-			} else {
-				this.items.push({
-					id: id,
-					quantity: quantity
-				});
-			}
-			localStorage.setItem(CartService.localStorageKey, JSON.stringify(this.items));
-			this.updateCart();
-			CartService.updateTotalPrice();
-
-			resolve(this.items);
-		});
-	}
-
-	public async removeItem(id: integer, quantity: integer = 1 as integer): Promise<CartItem[]> {
-		return new Promise<CartItem[]>(resolve => {
-
-			let inList = this.items.find(item => item.id === id);
-			if (inList) {
-				inList.quantity = (inList.quantity - quantity) as integer;
-				if (inList.quantity <= 0) {
-					this.items = this.items.filter(item => item.id !== id);
-				}
-			}
-			localStorage.setItem(CartService.localStorageKey, JSON.stringify(this.items));
-			this.updateCart();
-			CartService.updateTotalPrice();
-
-			resolve(this.items);
-		});
-	}
-
-	public async deleteItem(id: integer): Promise<CartItem[]> {
-		return new Promise<CartItem[]>(resolve => {
-
-			this.items = this.items.filter(item => item.id !== id);
-			localStorage.setItem(CartService.localStorageKey, JSON.stringify(this.items));
-			this.updateCart();
-			CartService.updateTotalPrice();
-
-			resolve(this.items);
-		});
+	public deleteItem = async (id: integer) => {
+		this._items = this._items.filter(item => item.id !== id);
+		this.updateCart(this._items);
 	}
 		
 }

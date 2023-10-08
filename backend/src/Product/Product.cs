@@ -10,7 +10,7 @@ public record Product
     public List<string>? Images { get; set; }
 
 
-    public string GetImageLocation() {
-        return Path.Combine("Resources/Images", Id.ToString());
-    }
+    public string GetImageLocation() =>
+        Path.Combine("Resources/Images", Id.ToString());
+    
 }

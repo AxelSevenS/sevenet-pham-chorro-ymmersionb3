@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/app/shared/environment';
+import { environment } from '../../../../../environment';
 import { User } from '../user-model/user.model';
+import { sha256 } from 'js-sha256';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   	providedIn: 'root'
@@ -9,64 +12,36 @@ export class LoginService {
 
 	public static currentUser: User | null = null;
 
-	constructor() { }
 
-	tryLogin = async (email: string, password: string): Promise<string | Error> => {
-		
-		return new Promise<string | Error>(resolve => {
-			let body = new FormData();
-			body.append('email', email);
-			body.append('password', password);
+	constructor(
+		private http: HttpClient
+	) { }
 
-			fetch( environment.domainUrl + 'api/users/login', {
-				method: 'POST',
-				body: body
-			} )
-				.then(response => response.json())
-				.then(data => {
-					if (data.status) {
-						let error = new Error(data.title);
-						resolve(error);
-						return;
-					}
-					resolve(data);
-				});
-		});
-		
+
+	public tryLogin = (email: string, password: string): Observable<string | HttpErrorResponse> => {
+		let body = new FormData();
+		body.append('email', email);
+		body.append('password', sha256(password));
+
+		return this.http.post<string | HttpErrorResponse>(environment.domainUrl + 'api/users/login', body);
 	};
 
-	tryRegister = async (email: string, password: string): Promise<User | Error> => {
-		return new Promise<User | Error>(resolve => {
-			var body = new FormData();
-			body.append('email', email);
-			body.append('password', password);
+	public tryRegister = (email: string, password: string): Observable<User | HttpErrorResponse> => {
+		let body = new FormData();
+		body.append('email', email);
+		body.append('password', sha256(password));
 
-			fetch( environment.domainUrl + 'api/users/register', {
-				method: 'POST',
-				body: body
-			} )
-				.then(response => response.json())
-				.catch(error => {
-					resolve(error);
-				})
-				.then(data => {
-					resolve(data);
-				});
-		});
-		
+		return this.http.post<User | HttpErrorResponse>(environment.domainUrl + 'api/users/register', body);
 	}
 
-	public static updateCurrentUser = () => {
-		let currentUser: User | Error = LoginService.getCurrentUser();
-		if ( !(currentUser instanceof Error) ) {
-			LoginService.currentUser = currentUser;
-		}
+	public static refreshUser() {
+		LoginService.currentUser = LoginService.getCurrentUser();
 	}
 	
-	public static getCurrentUser = (): User | Error => {
+	public static getCurrentUser(): User | null {
 		const jwtString = localStorage.getItem('jwt');
 		if (jwtString === null || jwtString === undefined) {
-			return new Error('No JWT found');
+			return null;
 		}
 		const jwt = JSON.parse(jwtString);
 
@@ -78,5 +53,15 @@ export class LoginService {
 		};
 		
 		return user;
+	}
+
+	public setJWT(jwt: string) {
+		localStorage.setItem('jwt', JSON.stringify(jwt));
+		LoginService.refreshUser();
+	}
+
+	public resetJWT() {
+		localStorage.removeItem('jwt');
+		LoginService.refreshUser();
 	}
 }

@@ -6,6 +6,7 @@ import { Product } from '../product/product-model/product.model';
  	name: 'stockFilter'
 })
 export class StockFilterPipe implements PipeTransform {
+	
 	transform(items: Product[] | null, doCull: boolean): Product[] {
 		if(!items) return [];
 		if(!doCull) return items;

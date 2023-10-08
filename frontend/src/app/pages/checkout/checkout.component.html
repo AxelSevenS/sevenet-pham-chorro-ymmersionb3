@@ -1,0 +1,42 @@
+<!-- <div class="checkout"> -->
+    <div id="address-info">
+
+        <div class="form-address-container">
+            <form id="form-adress">
+                
+                <span class="form-entry">
+                    <label for="address">Adresse</label>
+                    <input type="address" [(ngModel)]="address" name="address" placeholder="Entrez votre Adresse"/>
+                </span>
+                <span class="form-entry">
+                    <label for="locality">Région</label>
+                    <input [(ngModel)]="locality" name="locality" placeholder="Entrez votre Région"/>
+                </span>
+                <button class="form-adress-button" (click)="validateAddress()">Valider l'Adresse</button>
+            </form>
+        </div>
+        <div class="address-iframe" >
+            <iframe
+                width="700"
+                height="450"
+                style="border:0"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                [src]="mapUrl"
+                >
+            </iframe>
+            <div class="adress-contain-text">
+                <p class="size">
+                    {{ formattedAddress }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <cart #checkoutCart [checkoutButton]="false"/>
+
+    <div *ngIf="!isCartEmpty" class="end-checkout-button">
+        <button (click)="processPayment()">Finir l'Achat</button>
+    </div>
+<!-- </div> -->

@@ -1,0 +1,20 @@
+<div *ngIf="product" class="product-preview-cart">
+    <div class="images" *ngIf="product.images != null && product.images[0] as image">
+        <img src="{{ urlBase + image }}" alt="">
+    </div>
+    <span class="product-preview-name">
+        {{ product.name }}
+    </span>
+    <span class="product-preview-quantity">
+        <span>Quantité: </span>
+        <input type="number" min="1" max="{{product.stock}}" [(ngModel)]="cartItem.quantity" (change)="updateQuantityCallback(cartItem, product, cartItem.quantity)">
+    </span>
+    <span class="product-preview-button-container">
+        <button class="product-preview-button" [routerLink]="['/products', product.id]">
+            Plus d'infos
+        </button>
+        <button (click)="removeItemCallback(cartItem, product)">
+            <fa-icon [icon]="trashIcon"></fa-icon>
+        </button>
+    </span>
+</div>
